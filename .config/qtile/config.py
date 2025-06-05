@@ -141,8 +141,8 @@ for i in groups:
 
 layouts = [
     layout.Max(
-        border_width=3,
-        margin=10,
+        border_width=0,
+        margin=0,
         border_focus="#AAAAAA",
         max_rules=[
             Match(wm_class="wlogout"),  # wlogout
