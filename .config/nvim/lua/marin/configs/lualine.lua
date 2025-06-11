@@ -77,13 +77,35 @@ ins_left {
 		return ''
 	end,
 	color = { fg = colors.blue }, -- Sets highlighting of component
-	padding = { left = 0, right = 1 }, -- We don't need space before this
+	padding = { left = 2, right = 1 }, -- We don't need space before this
 }
 
 ins_left {
 	-- mode component
 	function()
-		return ''
+		local mode_format = {
+			n = "NOR",
+			i = "INS",
+			v = "VIS",
+			[''] = "VIS BLOCK",
+			V = "VIS LINE",
+			c = vim.fn.mode(),
+			no = vim.fn.mode(),
+			s = vim.fn.mode(),
+			S = vim.fn.mode(),
+			[''] = vim.fn.mode(),
+			ic = vim.fn.mode(),
+			R = vim.fn.mode(),
+			Rv = vim.fn.mode(),
+			cv = vim.fn.mode(),
+			ce = vim.fn.mode(),
+			r = vim.fn.mode(),
+			rm = vim.fn.mode(),
+			['r?'] = vim.fn.mode(),
+			['!'] = vim.fn.mode(),
+			t = vim.fn.mode(),
+		}
+		return mode_format[vim.fn.mode()]
 	end,
 	color = function()
 		-- auto change color according to neovims mode
@@ -111,7 +133,7 @@ ins_left {
 		}
 		return { fg = mode_color[vim.fn.mode()] }
 	end,
-	padding = { right = 1 },
+	padding = { left = 2, right = 1 },
 }
 
 ins_left {
@@ -134,18 +156,13 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_left {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
-	symbols = { error = ' ', warn = ' ', info = ' ' },
+	symbols = { error = ' ', warn = ' ', info = ' ', hint = " " },
 	diagnostics_color = {
 		error = { fg = colors.red },
 		warn = { fg = colors.yellow },
-		info = { fg = colors.cyan },
+		info = { fg = colors.blue },
+		hint = { fg = colors.cyan }
 	},
-}
-
-ins_left {
-	-- tabs component
-	'tabs',
-	cond = conditions.buffer_not_empty,
 }
 
 -- Insert mid section. You can make any number of sections in neovim :)
