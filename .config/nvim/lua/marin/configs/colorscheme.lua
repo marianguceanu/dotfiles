@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 ---@diagnostic disable-next-line: unused-function, unused-local
 local function transparency()
 	vim.cmd.highlight("Normal guibg=none")
@@ -12,8 +14,7 @@ end
 local function dark()
 	vim.cmd.colorscheme("darkblue")
 	vim.cmd.colorscheme("lunaperche")
-	-- vim.cmd.colorscheme("gruber-darker")
-	-- vim.cmd.highlight("Comment gui=italic guifg=grey")
+	vim.cmd.highlight("Comment gui=italic guifg=grey")
 	transparency()
 end
 
