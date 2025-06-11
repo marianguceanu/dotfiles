@@ -1,6 +1,17 @@
 ---@diagnostic disable: undefined-global
 
 ---@diagnostic disable-next-line: unused-function, unused-local
+local function coloring()
+	vim.cmd.highlight("MatchParen guifg=red")
+	vim.cmd.highlight("Comment gui=italic guifg=grey")
+	-- vim.api.nvim_set_hl(0, "Function", { fg = "cyan" })
+	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#ffa2a2" })
+	-- vim.api.nvim_set_hl(0, "@variable", { fg = "white" })
+	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "orange" })
+	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
+end
+
+---@diagnostic disable-next-line: unused-function, unused-local
 local function transparency()
 	vim.cmd.highlight("Normal guibg=none")
 	vim.cmd.highlight("Normal ctermbg=none")
@@ -14,8 +25,8 @@ end
 local function dark()
 	vim.cmd.colorscheme("darkblue")
 	vim.cmd.colorscheme("lunaperche")
-	vim.cmd.highlight("Comment gui=italic guifg=grey")
 	transparency()
+	coloring()
 end
 
 local function light()
@@ -44,16 +55,6 @@ local function diagnostics()
 	vim.cmd.highlight("DiagnosticError guibg=red")
 end
 
----@diagnostic disable-next-line: unused-function, unused-local
-local function coloring()
-	vim.cmd.highlight("MatchParen guifg=red")
-	vim.cmd.highlight("Comment gui=italic guifg=grey")
-	-- vim.api.nvim_set_hl(0, "Function", { fg = "cyan" })
-	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#ffa2a2" })
-	-- vim.api.nvim_set_hl(0, "@variable", { fg = "white" })
-	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "orange" })
-	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
-end
 
 ---@diagnostic disable-next-line: unused-function, unused-local
 local function line_numbers()

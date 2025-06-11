@@ -46,7 +46,7 @@ config.inactive_pane_hsb = {
 config.window_padding = {
 	left = 5,
 	right = 0,
-	top = 0,
+	top = 5,
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
