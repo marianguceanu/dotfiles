@@ -272,6 +272,9 @@ screens = [
                     font="Mononoki Nerd Font",
                 ),
                 widget.Spacer(),
+                widget.Systray(
+                    icon_size=25,
+                ),
                 widget.Volume(
                     padding=10,
                     fmt="  {}",
@@ -294,12 +297,9 @@ screens = [
                     format=' {uf}{m}',
                     padding=10,
                 ),
-                widget.Systray(
-                    icon_size=25,
-                ),
             ],
             30,
-            background="#191919",
+            background="#181818",
             # shadow=0,
             # border_width=[0,0,4,0],  # Draw top and bottom borders
             # border_color=["888888", "888888", "888888", "888888"]  # Borders are magenta

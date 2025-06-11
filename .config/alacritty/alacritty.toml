@@ -1,5 +1,5 @@
 general.import = [
-    "~/AppData/Roaming/alacritty/themes/default.toml"
+    "~/.config/alacritty/themes/default.toml"
 ]
 
 [font]
@@ -13,7 +13,6 @@ bindings = [{ key="F11", action="ToggleFullscreen" },]
 term = "xterm-256color"
 
 [window]
-padding = { x = 10, y = 5 }
+padding = { x = 10, y = 0 }
 dynamic_padding = true
 decorations="None"
-

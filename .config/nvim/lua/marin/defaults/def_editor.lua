@@ -32,7 +32,7 @@ vim.cmd([[set guicursor=i:block]])
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]])
 
 -- Disable line wrap
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.keymap.set('n', '<C-w>.', '5<C-w>>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-w>,', '5<C-w><', { noremap = true, silent = true })

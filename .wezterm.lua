@@ -7,6 +7,8 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
+-- config.color_scheme = '3024 Day'
+
 -- Background and tab bar modifications so that they stay one color
 config.colors = {
 	background = '#181818',
@@ -31,8 +33,9 @@ config.colors = {
 -- Font and enabling the ligatures
 config.font =
     wezterm.font('JetBrainsMono NF', { weight = 'Regular' })
-config.font_size = 13
-config.harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
+config.font_size = 16.5
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.warn_about_missing_glyphs = false
 
 --
 config.inactive_pane_hsb = {
@@ -42,8 +45,8 @@ config.inactive_pane_hsb = {
 
 config.window_padding = {
 	left = 5,
-	right = 5,
-	top = 10,
+	right = 0,
+	top = 0,
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -71,11 +74,6 @@ config.keys = {
 	{ key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
 	{ key = "8", mods = "CTRL", action = wezterm.action.ActivateTab(7) },
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
-	{
-		key = "c",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.SpawnTab "CurrentPaneDomain",
-	},
 }
 
 
