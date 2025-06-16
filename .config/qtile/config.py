@@ -143,7 +143,7 @@ layouts = [
     layout.Max(
         border_width=0,
         margin=0,
-        border_focus="#AAAAAA",
+        border_focus="#215578",
         max_rules=[
             Match(wm_class="wlogout"),  # wlogout
         ]
@@ -247,16 +247,17 @@ screens = [
                     mouse_callbacks={"Button1": lazy.spawn("evolution")},
                 ),
                 widget.WindowCount(
-                    fmt=" {}"
+                    fmt="| {}|"
                 ),
                 widget.TaskList(
-                    borderwidth=0,
+                    borderwidth=2,
                     markup_focused='<span underline="low">{}</span>',
-                    padding_y=7,
+                    padding_y=5,
+                    padding_x=1,
                     parse_text=no_title,
                     margin=0,
-                    rounded=False,
-                    icon_size=25,
+                    rounded=True,
+                    icon_size=22,
                     highlight_method="block",
                     stretch=False,
                 ),
@@ -268,7 +269,7 @@ screens = [
                     padding=6,
                     margin_x=0,
                     center_aligned=True,
-                    highlight_method="text",
+                    highlight_method="block",
                     font="Mononoki Nerd Font",
                 ),
                 widget.Spacer(),
@@ -299,7 +300,7 @@ screens = [
                 ),
             ],
             30,
-            background="#181818",
+            background="#282828",
             # shadow=0,
             # border_width=[0,0,4,0],  # Draw top and bottom borders
             # border_color=["888888", "888888", "888888", "888888"]  # Borders are magenta

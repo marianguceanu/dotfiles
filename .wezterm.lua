@@ -32,21 +32,21 @@ config.colors = {
 
 -- Font and enabling the ligatures
 config.font =
-    wezterm.font('JetBrainsMono NF', { weight = 'Regular' })
-config.font_size = 16.5
+    wezterm.font('IosevkaTerm NF', { weight = 'Regular' })
+config.font_size = 19
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.warn_about_missing_glyphs = false
 
---
+
 config.inactive_pane_hsb = {
 	saturation = 0.9,
 	brightness = 0.8,
 }
 
 config.window_padding = {
-	left = 5,
+	left = 8,
 	right = 0,
-	top = 5,
+	top = 15,
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -76,6 +76,7 @@ config.keys = {
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
 }
 
+-- config.enable_wayland = true
 
 -- and finally, return the configuration to wezterm
 return config
