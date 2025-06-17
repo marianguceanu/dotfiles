@@ -1,6 +1,5 @@
 ---@diagnostic disable: undefined-global
 
----@diagnostic disable-next-line: unused-function, unused-local
 local function coloring()
 	vim.cmd.highlight("MatchParen guifg=red")
 	vim.cmd.highlight("Comment gui=italic guifg=grey")
@@ -11,7 +10,12 @@ local function coloring()
 	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
 end
 
----@diagnostic disable-next-line: unused-function, unused-local
+local function tabline()
+	vim.cmd.highlight("TabLineFill guibg=#2c2c2c")
+	vim.cmd.highlight("TabLine guibg=#2c2c2c guifg=#ffffff")
+	vim.cmd.highlight("TabLineSel guibg=#8f8f8f guifg=#0f0f0f")
+end
+
 local function transparency()
 	vim.cmd.highlight("Normal guibg=none")
 	vim.cmd.highlight("Normal ctermbg=none")
@@ -24,9 +28,10 @@ end
 
 local function dark()
 	vim.cmd.colorscheme("darkblue")
-	vim.cmd.colorscheme("lunaperche")
+	vim.cmd.colorscheme("gruber-darker")
 	transparency()
 	coloring()
+	tabline()
 end
 
 local function light()

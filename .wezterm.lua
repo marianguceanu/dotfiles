@@ -32,8 +32,8 @@ config.colors = {
 
 -- Font and enabling the ligatures
 config.font =
-    wezterm.font('IosevkaTerm NF', { weight = 'Regular' })
-config.font_size = 19
+    wezterm.font('IosevkaTerm Nerd Font', { weight = 'Regular' })
+config.font_size = 17
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.warn_about_missing_glyphs = false
 
@@ -46,7 +46,7 @@ config.inactive_pane_hsb = {
 config.window_padding = {
 	left = 8,
 	right = 0,
-	top = 15,
+	top = 5,
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
