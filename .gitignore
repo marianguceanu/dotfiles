@@ -1,3 +1,4 @@
 pack
 nvim/*.json
 qtile/__pycache__/
+.luarc.json

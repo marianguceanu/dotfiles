@@ -8,6 +8,7 @@ local function telescope_lsp()
 end
 
 local function coloring()
+	-- vim.cmd.highlight("MatchParen guifg=red")
 	vim.cmd.highlight("Comment gui=italic guifg=grey")
 	vim.api.nvim_set_hl(0, "@property", { fg = "white" })
 	-- vim.cmd.highlight("MatchParen guifg=red")
