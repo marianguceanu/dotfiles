@@ -2,10 +2,10 @@ local lualine = require('lualine')
 
 -- stylua: ignore
 local colors = {
-	bg       = '#222222',
+	bg       = '#282828',
 	fg       = '#bbc2cf',
 	yellow   = '#ECBE7B',
-	cyan     = '#008080',
+	cyan     = '#96a6c8',
 	darkblue = '#081633',
 	green    = '#98be65',
 	orange   = '#FF8800',
@@ -71,82 +71,69 @@ local function ins_right(component)
 	table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-	function()
-		-- return '▊'
-		return ''
-	end,
-	color = { fg = colors.blue }, -- Sets highlighting of component
-	padding = { left = 2, right = 1 }, -- We don't need space before this
+local mode_color = {
+	n = colors.cyan,
+	i = colors.green,
+	v = colors.blue,
+	[''] = colors.blue,
+	V = colors.blue,
+	c = colors.magenta,
+	no = colors.red,
+	s = colors.orange,
+	S = colors.orange,
+	[''] = colors.orange,
+	ic = colors.yellow,
+	R = colors.violet,
+	Rv = colors.violet,
+	cv = colors.red,
+	ce = colors.red,
+	r = colors.cyan,
+	rm = colors.cyan,
+	['r?'] = colors.cyan,
+	['!'] = colors.red,
+	t = colors.red,
 }
+
+local mode_format = {
+	n = "NOR",
+	i = "INS",
+	v = "VIS",
+	[''] = "VIS BLOCK",
+	V = "VIS LINE",
+	c = "CMD",
+	no = vim.fn.mode(),
+	s = vim.fn.mode(),
+	S = vim.fn.mode(),
+	[''] = vim.fn.mode(),
+	ic = vim.fn.mode(),
+	R = vim.fn.mode(),
+	Rv = vim.fn.mode(),
+	cv = vim.fn.mode(),
+	ce = vim.fn.mode(),
+	r = vim.fn.mode(),
+	rm = vim.fn.mode(),
+	['r?'] = vim.fn.mode(),
+	['!'] = vim.fn.mode(),
+	t = vim.fn.mode(),
+}
+
 
 ins_left {
 	-- mode component
 	function()
-		local mode_format = {
-			n = "NOR",
-			i = "INS",
-			v = "VIS",
-			[''] = "VIS BLOCK",
-			V = "VIS LINE",
-			c = vim.fn.mode(),
-			no = vim.fn.mode(),
-			s = vim.fn.mode(),
-			S = vim.fn.mode(),
-			[''] = vim.fn.mode(),
-			ic = vim.fn.mode(),
-			R = vim.fn.mode(),
-			Rv = vim.fn.mode(),
-			cv = vim.fn.mode(),
-			ce = vim.fn.mode(),
-			r = vim.fn.mode(),
-			rm = vim.fn.mode(),
-			['r?'] = vim.fn.mode(),
-			['!'] = vim.fn.mode(),
-			t = vim.fn.mode(),
-		}
 		return mode_format[vim.fn.mode()]
 	end,
 	color = function()
-		-- auto change color according to neovims mode
-		local mode_color = {
-			n = colors.cyan,
-			i = colors.green,
-			v = colors.blue,
-			[''] = colors.blue,
-			V = colors.blue,
-			c = colors.magenta,
-			no = colors.red,
-			s = colors.orange,
-			S = colors.orange,
-			[''] = colors.orange,
-			ic = colors.yellow,
-			R = colors.violet,
-			Rv = colors.violet,
-			cv = colors.red,
-			ce = colors.red,
-			r = colors.cyan,
-			rm = colors.cyan,
-			['r?'] = colors.cyan,
-			['!'] = colors.red,
-			t = colors.red,
-		}
 		return { fg = mode_color[vim.fn.mode()] }
 	end,
 	padding = { left = 2, right = 1 },
 }
 
-ins_left {
-	-- filesize component
-	'filesize',
-	cond = conditions.buffer_not_empty,
-}
-
+ins_left { 'filesize' }
 
 ins_left {
 	'filename',
-	cond = conditions.buffer_not_empty,
-	color = { fg = colors.cyan, gui = 'bold' },
+	color = { fg = colors.cyan, },
 }
 
 ins_left { 'location' }
@@ -165,14 +152,66 @@ ins_left {
 	},
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
+-- Insert mid section.
 ins_left {
 	function()
 		return '%='
 	end,
 }
 
+
+ins_right {
+	'o:encoding',
+	fmt = string.upper,
+	cond = conditions.hide_in_width,
+	color = { fg = colors.green, gui = 'bold' },
+}
+
+ins_right {
+	'fileformat',
+	fmt = string.upper,
+	icons_enabled = false,
+	color = { fg = "888888", gui = 'bold' },
+}
+
+ins_right {
+	'branch',
+	icon = ' ',
+	color = { fg = "pink", gui = 'bold' },
+}
+
+ins_right {
+	'diff',
+	symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+	diff_color = {
+		added = { fg = colors.green },
+		modified = { fg = colors.orange },
+		removed = { fg = colors.red },
+	},
+	cond = conditions.hide_in_width,
+}
+
+
+-- Now don't forget to initialize lualine
+lualine.setup(config)
+
+
+-- NOTE: unused
+
+-- ins_left {
+-- 	function()
+-- 		return '▊'
+-- 	end,
+-- 	color = { fg = colors.blue }, -- Sets highlighting of component
+-- 	padding = { left = 2, right = 1 }, -- We don't need space before this
+-- }
+-- ins_right {
+-- 	function()
+-- 		return '▊'
+-- 	end,
+-- 	color = { fg = colors.blue },
+-- 	padding = { left = 1 },
+-- }
 -- ins_left {
 -- 	-- Lsp server name .
 -- 	function()
@@ -193,48 +232,3 @@ ins_left {
 -- 	icon = ' ',
 -- 	color = { fg = '#ffffff', gui = 'bold' },
 -- }
-
--- Add components to right sections
-ins_right {
-	'o:encoding', -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = 'bold' },
-}
-
-ins_right {
-	'fileformat',
-	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-	color = { fg = "888888", gui = 'bold' },
-}
-
-ins_right {
-	'branch',
-	icon = ' ',
-	color = { fg = "pink", gui = 'bold' },
-}
-
-ins_right {
-	'diff',
-	-- Is it me or the symbol for modified us really weird
-	symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.orange },
-		removed = { fg = colors.red },
-	},
-	cond = conditions.hide_in_width,
-}
-
-ins_right {
-	function()
-		-- return '▊'
-		return ''
-	end,
-	color = { fg = colors.blue },
-	padding = { left = 1 },
-}
-
--- Now don't forget to initialize lualine
-lualine.setup(config)

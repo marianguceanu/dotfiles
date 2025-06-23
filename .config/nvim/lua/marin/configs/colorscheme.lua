@@ -1,22 +1,20 @@
----@diagnostic disable: undefined-global
-
-local function telescope_lsp()
-	vim.cmd.highlight("TelescopeBorder guifg=#404040 guibg=#404040")
+---@diagnostic disable: undefined-global, unused-function, unused-local
+local function floating_colors()
 	vim.cmd.highlight("TelescopeMatching guibg=#404040")
-	vim.cmd.highlight("TelescopeTitle gui=italic")
+	vim.cmd.highlight("TelescopeBorder guibg=#404040 guifg=#404040 gui=italic")
+	vim.cmd.highlight("Float guibg=#404040 guifg=#404040 gui=italic")
 	vim.cmd.highlight("FloatBorder guibg=#404040 guifg=#404040")
 end
 
-local function coloring()
+local function syntax_highlight()
 	-- vim.cmd.highlight("MatchParen guifg=red")
 	vim.cmd.highlight("Comment gui=italic guifg=grey")
-	vim.api.nvim_set_hl(0, "@property", { fg = "white" })
-	-- vim.cmd.highlight("MatchParen guifg=red")
-	-- vim.api.highlight("Function guifg=cyan")
-	-- vim.api.highlight("Keyword gui=bold guifg=#ffa2a2")
-	-- vim.api.highlight("@variable guifg=white" })
-	-- vim.api.highlight("@type.builtin guifg=orange")
-	-- vim.api.highlight("Type guifg=orange")
+	vim.cmd.highlight("@property guifg=white")
+	-- vim.api.nvim_set_hl(0, "Function", { fg = "cyan" })
+	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#ffa2a2" })
+	-- vim.api.nvim_set_hl(0, "@variable", { fg = "white" })
+	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "orange" })
+	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
 end
 
 local function tabline()
@@ -38,10 +36,10 @@ end
 local function dark()
 	vim.cmd.colorscheme("darkblue")
 	vim.cmd.colorscheme("gruber-darker")
-	transparency()
-	telescope_lsp()
-	coloring()
+	-- transparency()
+	syntax_highlight()
 	tabline()
+	floating_colors()
 end
 
 local function light()

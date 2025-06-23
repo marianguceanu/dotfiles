@@ -3,8 +3,8 @@ require("snacks").setup(
 ---@type snacks.Config
 	{
 		explorer     = { enabled = false },
-		statuscolumn = { enabled = false },
 		words        = { enabled = false },
+		statuscolumn = { enabled = true },
 		scroll       = { enabled = true },
 		picker       = { enabled = true },
 		bigfile      = { enabled = true },

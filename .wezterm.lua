@@ -7,24 +7,24 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
--- config.color_scheme = '3024 Day'
 
+local background_color = "#181818"
 -- Background and tab bar modifications so that they stay one color
 config.colors = {
 	background = '#181818',
 	tab_bar = {
-		background = "#111111",
+		background = background_color,
 		active_tab = {
-			bg_color = "#111111",
+			bg_color = background_color,
 			fg_color = "white",
 			italic = true,
 		},
 		inactive_tab = {
-			bg_color = "#111111",
+			bg_color = background_color,
 			fg_color = "grey",
 		},
 		new_tab = {
-			bg_color = "#111111",
+			bg_color = background_color,
 			fg_color = "white",
 		},
 	},
@@ -32,7 +32,7 @@ config.colors = {
 
 -- Font and enabling the ligatures
 config.font =
-    wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
+    wezterm.font('ZedMono Nerd Font', { weight = 'Regular' })
 config.font_size = 18
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.warn_about_missing_glyphs = false
@@ -44,12 +44,12 @@ config.inactive_pane_hsb = {
 }
 
 config.window_padding = {
-	left = 8,
-	right = 0,
-	top = 5,
+	left = 10,
+	right = 10,
+	top = 15,
 	bottom = 0,
 }
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "NONE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
