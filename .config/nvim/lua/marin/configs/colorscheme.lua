@@ -1,11 +1,18 @@
 ---@diagnostic disable: undefined-global
 
+local function telescope()
+	vim.cmd.highlight("TelescopeBorder guifg=#404040 guibg=#404040")
+	vim.cmd.highlight("TelescopeMatching guibg=#404040")
+	vim.cmd.highlight("TelescopeTitle gui=italic")
+end
+
 local function coloring()
 	vim.cmd.highlight("MatchParen guifg=red")
 	vim.cmd.highlight("Comment gui=italic guifg=grey")
 	-- vim.api.nvim_set_hl(0, "Function", { fg = "cyan" })
 	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#ffa2a2" })
 	-- vim.api.nvim_set_hl(0, "@variable", { fg = "white" })
+	vim.api.nvim_set_hl(0, "@property", { fg = "white" })
 	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "orange" })
 	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
 end
@@ -30,6 +37,7 @@ local function dark()
 	vim.cmd.colorscheme("darkblue")
 	vim.cmd.colorscheme("gruber-darker")
 	transparency()
+	telescope()
 	coloring()
 	tabline()
 end

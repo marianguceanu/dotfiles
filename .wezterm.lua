@@ -32,8 +32,8 @@ config.colors = {
 
 -- Font and enabling the ligatures
 config.font =
-    wezterm.font('IosevkaTerm Nerd Font', { weight = 'Regular' })
-config.font_size = 17
+    wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
+config.font_size = 18
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.warn_about_missing_glyphs = false
 
@@ -74,6 +74,11 @@ config.keys = {
 	{ key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
 	{ key = "8", mods = "CTRL", action = wezterm.action.ActivateTab(7) },
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
+	{
+		key = 'F11',
+		mods = '',
+		action = wezterm.action.ToggleFullScreen,
+	},
 }
 
 -- config.enable_wayland = true
