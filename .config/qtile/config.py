@@ -63,7 +63,7 @@ keys = [
         lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window",
     ),
-    Key([mod], "Tab", lazy.layout.next(), desc="Move focus to next monitor"),
+    Key(["mod1"], "Tab", lazy.layout.next(), desc="Move focus to next monitor"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key(
         [mod],

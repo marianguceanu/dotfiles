@@ -3,6 +3,7 @@ local lualine = require('lualine')
 -- stylua: ignore
 local colors = {
 	bg       = '#282828',
+	-- bg       = '#2f3339',
 	fg       = '#bbc2cf',
 	yellow   = '#ECBE7B',
 	cyan     = '#96a6c8',
@@ -194,6 +195,9 @@ ins_right {
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
+
+--[[ vim.opt.termguicolors = true
+require("bufferline").setup {} ]]
 
 
 -- NOTE: unused

@@ -34,8 +34,6 @@ vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearc
 -- Disable line wrap
 vim.opt.wrap = false
 
--- Set colorcolumn
-vim.cmd([[set colorcolumn=125]])
 
 vim.keymap.set('n', '<C-w>.', '5<C-w>>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-w>,', '5<C-w><', { noremap = true, silent = true })
