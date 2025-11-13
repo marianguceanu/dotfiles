@@ -10,7 +10,6 @@ vim.opt.incsearch = true
 -- Save undo history
 vim.o.undofile = true
 
-
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -33,7 +32,10 @@ vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearc
 
 -- Disable line wrap
 vim.opt.wrap = false
+vim.cmd([[set colorcolumn=120]])
+vim.cmd([[set cursorline]])
 
-
-vim.keymap.set('n', '<C-w>.', '5<C-w>>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-w>,', '5<C-w><', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-w>.", "5<C-w>>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-w>,", "5<C-w><", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-L>", "20zl", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-H>", "20zh", { noremap = true, silent = true })

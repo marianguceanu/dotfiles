@@ -1,12 +1,11 @@
-local bg_color = "#282828"
--- local bg_color = "#24262b"
+require("marin.configs.constants")
 
 ---@diagnostic disable: undefined-global, unused-function, unused-local
 local function floating_colors()
-	vim.cmd.highlight("TelescopeMatching guibg=" .. bg_color)
-	vim.cmd.highlight("TelescopeBorder guibg=" .. bg_color .. " guifg=" .. bg_color .. " gui=italic")
-	vim.cmd.highlight("Float guibg=" .. bg_color .. " guifg=" .. bg_color .. " gui=italic")
-	vim.cmd.highlight("FloatBorder guibg=" .. bg_color .. " guifg=" .. bg_color)
+	vim.cmd.highlight("TelescopeMatching guibg=" .. Colors.bg_lighter .. " guifg=orange")
+	vim.cmd.highlight("TelescopeBorder guibg=" .. Colors.bg_lighter .. " guifg=" .. Colors.bg_lighter .. " gui=italic")
+	vim.cmd.highlight("Float guibg=" .. Colors.bg_lighter .. " guifg=" .. Colors.bg_lighter .. " gui=italic")
+	vim.cmd.highlight("FloatBorder guibg=" .. Colors.bg_lighter .. " guifg=" .. Colors.bg_lighter)
 end
 
 local function syntax_highlight()
@@ -14,9 +13,9 @@ local function syntax_highlight()
 end
 
 local function tabline()
-	vim.cmd.highlight("TabLineFill guibg=#2c2c2c gui=none")
-	vim.cmd.highlight("TabLine guibg=#2c2c2c guifg=#ffffff gui=none")
-	vim.cmd.highlight("TabLineSel guibg=#8f8f8f guifg=#0f0f0f gui=none")
+	vim.cmd.highlight("TabLineFill guibg=" .. Colors.bg .. " guifg=" .. Colors.bg)
+	vim.cmd.highlight("TabLine guibg=" .. Colors.bg .. " guifg=#ffffff gui=none")
+	vim.cmd.highlight("TabLineSel guibg=" .. Colors.active .. " gui=none")
 end
 
 local function transparency()
@@ -31,13 +30,13 @@ local function dark()
 	vim.cmd.colorscheme("gruber-darker")
 	syntax_highlight()
 	floating_colors()
+	tabline()
+	transparency()
 end
 
 local function light()
-	vim.cmd.colorscheme("morning")
-	-- vim.cmd.colorscheme("quiet")
+	vim.cmd.colorscheme("peachpuff")
 	vim.cmd.highlight("Function gui=bold")
-	transparency()
 end
 
 dark()

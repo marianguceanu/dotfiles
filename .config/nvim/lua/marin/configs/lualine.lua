@@ -1,9 +1,9 @@
-local lualine = require('lualine')
+local lualine = require("lualine")
+require("marin.configs.constants")
 
 -- stylua: ignore
 local colors = {
-	bg       = '#282828',
-	-- bg       = '#2f3339',
+	bg       = Colors.bg_lighter,
 	fg       = '#bbc2cf',
 	yellow   = '#ECBE7B',
 	cyan     = '#96a6c8',
@@ -18,14 +18,14 @@ local colors = {
 
 local conditions = {
 	buffer_not_empty = function()
-		return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
 	end,
 	hide_in_width = function()
 		return vim.fn.winwidth(0) > 80
 	end,
 	check_git_workspace = function()
-		local filepath = vim.fn.expand('%:p:h')
-		local gitdir = vim.fn.finddir('.git', filepath .. ';')
+		local filepath = vim.fn.expand("%:p:h")
+		local gitdir = vim.fn.finddir(".git", filepath .. ";")
 		return gitdir and #gitdir > 0 and #gitdir < #filepath
 	end,
 }
@@ -33,8 +33,8 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-		component_separators = '',
-		section_separators = '',
+		component_separators = "",
+		section_separators = "",
 		theme = {
 			-- We are going to use lualine_c an lualine_x as left and
 			-- right section. Both are highlighted by c theme .  So we
@@ -76,13 +76,13 @@ local mode_color = {
 	n = colors.cyan,
 	i = colors.green,
 	v = colors.blue,
-	[''] = colors.blue,
+	[""] = colors.blue,
 	V = colors.blue,
 	c = colors.magenta,
 	no = colors.red,
 	s = colors.orange,
 	S = colors.orange,
-	[''] = colors.orange,
+	[""] = colors.orange,
 	ic = colors.yellow,
 	R = colors.violet,
 	Rv = colors.violet,
@@ -90,8 +90,8 @@ local mode_color = {
 	ce = colors.red,
 	r = colors.cyan,
 	rm = colors.cyan,
-	['r?'] = colors.cyan,
-	['!'] = colors.red,
+	["r?"] = colors.cyan,
+	["!"] = colors.red,
 	t = colors.red,
 }
 
@@ -99,13 +99,13 @@ local mode_format = {
 	n = "NOR",
 	i = "INS",
 	v = "VIS",
-	[''] = "VIS BLOCK",
+	[""] = "VIS BLOCK",
 	V = "VIS LINE",
 	c = "CMD",
 	no = vim.fn.mode(),
 	s = vim.fn.mode(),
 	S = vim.fn.mode(),
-	[''] = vim.fn.mode(),
+	[""] = vim.fn.mode(),
 	ic = vim.fn.mode(),
 	R = vim.fn.mode(),
 	Rv = vim.fn.mode(),
@@ -113,13 +113,12 @@ local mode_format = {
 	ce = vim.fn.mode(),
 	r = vim.fn.mode(),
 	rm = vim.fn.mode(),
-	['r?'] = vim.fn.mode(),
-	['!'] = vim.fn.mode(),
+	["r?"] = vim.fn.mode(),
+	["!"] = vim.fn.mode(),
 	t = vim.fn.mode(),
 }
 
-
-ins_left {
+ins_left({
 	-- mode component
 	function()
 		return mode_format[vim.fn.mode()]
@@ -128,77 +127,72 @@ ins_left {
 		return { fg = mode_color[vim.fn.mode()] }
 	end,
 	padding = { left = 2, right = 1 },
-}
+})
+ins_left({
+	"branch",
+	icon = " ",
+	color = { fg = "pink", gui = "bold" },
+})
 
-ins_left { 'filesize' }
+ins_left({
+	"filename",
+	color = { fg = colors.cyan },
+})
 
-ins_left {
-	'filename',
-	color = { fg = colors.cyan, },
-}
+ins_left({ "location" })
 
-ins_left { 'location' }
+ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-ins_left {
-	'diagnostics',
-	sources = { 'nvim_diagnostic' },
-	symbols = { error = ' ', warn = ' ', info = ' ', hint = " " },
+ins_left({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 	diagnostics_color = {
 		error = { fg = colors.red },
 		warn = { fg = colors.yellow },
 		info = { fg = colors.blue },
-		hint = { fg = colors.cyan }
+		hint = { fg = colors.cyan },
 	},
-}
+})
 
 -- Insert mid section.
-ins_left {
+ins_left({
 	function()
-		return '%='
+		return "%="
 	end,
-}
+})
 
-
-ins_right {
-	'o:encoding',
+ins_right({
+	"o:encoding",
 	fmt = string.upper,
 	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = 'bold' },
-}
+	color = { fg = colors.green, gui = "bold" },
+})
 
-ins_right {
-	'fileformat',
+ins_right({
+	"fileformat",
 	fmt = string.upper,
 	icons_enabled = false,
-	color = { fg = "888888", gui = 'bold' },
-}
+	color = { fg = "888888", gui = "bold" },
+})
+ins_right({ "filesize" })
 
-ins_right {
-	'branch',
-	icon = ' ',
-	color = { fg = "pink", gui = 'bold' },
-}
-
-ins_right {
-	'diff',
-	symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+ins_right({
+	"diff",
+	symbols = { added = " ", modified = "󰝤 ", removed = " " },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.orange },
 		removed = { fg = colors.red },
 	},
 	cond = conditions.hide_in_width,
-}
-
+})
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
 
 --[[ vim.opt.termguicolors = true
 require("bufferline").setup {} ]]
-
 
 -- NOTE: unused
 

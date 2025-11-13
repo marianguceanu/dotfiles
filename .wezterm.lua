@@ -48,8 +48,8 @@ config.colors = {
 }
 
 -- Font and enabling the ligatures
-config.font = wezterm.font("ZedMono Nerd Font Propo", { weight = "Regular" })
-config.font_size = 18
+config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
+config.font_size = 19.5
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
