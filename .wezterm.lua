@@ -7,49 +7,19 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
-local background_color = "#181818"
-local background_color_rest = "#282828"
+local function scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "Catppuccin Mocha"
+	else
+		return "Catppuccin Latte"
+	end
+end
 
---[[ local background_color = "#1f2329"
-local background_color_rest = "#2f3339" ]]
-
---[[ local background_color = "#14161b"
-local background_color_rest = "#34363b" ]]
-
-config.color_schemes = {
-	["Light Scheme"] = {
-		background = "#f8f8f8",
-		foreground = "#272822",
-	},
-	["Dark Scheme"] = {
-		background = background_color,
-		foreground = "#f8f8f2",
-	},
-}
-
--- Background and tab bar modifications so that they stay one color
-config.colors = {
-	tab_bar = {
-		background = background_color_rest,
-		active_tab = {
-			bg_color = background_color_rest,
-			fg_color = "white",
-			italic = true,
-		},
-		inactive_tab = {
-			bg_color = background_color_rest,
-			fg_color = "grey",
-		},
-		new_tab = {
-			bg_color = background_color_rest,
-			fg_color = "white",
-		},
-	},
-}
+config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- Font and enabling the ligatures
-config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
-config.font_size = 19.5
+config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "Regular" })
+config.font_size = 14
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
@@ -112,6 +82,46 @@ for i = 1, 8 do
 end
 
 -- config.enable_wayland = true
+--
+--[[ local background_color = "#181818"
+local background_color_rest = "#282828" ]]
+
+--[[ local background_color = "#1f2329"
+local background_color_rest = "#2f3339" ]]
+
+--[[ local background_color = "#14161b"
+local background_color_rest = "#34363b" ]]
+
+--[[ config.color_schemes = {
+	["Light Scheme"] = {
+		background = "#f8f8f8",
+		foreground = "#272822",
+	},
+	["Dark Scheme"] = {
+		background = background_color,
+		foreground = "#f8f8f2",
+	},
+}
+
+-- Background and tab bar modifications so that they stay one color
+config.colors = {
+	tab_bar = {
+		background = background_color_rest,
+		active_tab = {
+			bg_color = background_color_rest,
+			fg_color = "white",
+			italic = true,
+		},
+		inactive_tab = {
+			bg_color = background_color_rest,
+			fg_color = "grey",
+		},
+		new_tab = {
+			bg_color = background_color_rest,
+			fg_color = "white",
+		},
+	},
+} ]]
 
 -- and finally, return the configuration to wezterm
 return config

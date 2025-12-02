@@ -27,7 +27,7 @@ end
 
 local function dark()
 	vim.cmd.colorscheme("darkblue")
-	vim.cmd.colorscheme("gruber-darker")
+	vim.cmd.colorscheme("default")
 	syntax_highlight()
 	floating_colors()
 	tabline()
@@ -35,8 +35,12 @@ local function dark()
 end
 
 local function light()
-	vim.cmd.colorscheme("peachpuff")
+	vim.cmd.colorscheme("morning")
 	vim.cmd.highlight("Function gui=bold")
+	syntax_highlight()
+	floating_colors()
+	tabline()
+	transparency()
 end
 
 dark()

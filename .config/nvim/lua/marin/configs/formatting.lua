@@ -1,7 +1,5 @@
 require("conform").setup({
 	formatters_by_ft = {
-		c = { "clang-format" },
-		bash = { "beautysh" },
 		javascript = { "biome" },
 		javascriptreact = { "biome" },
 		typescript = { "biome" },
