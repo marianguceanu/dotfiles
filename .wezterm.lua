@@ -69,7 +69,7 @@ config.keys = {
 	{ key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
 	{ key = "8", mods = "CTRL", action = wezterm.action.ActivateTab(7) },
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
-	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ EmitEvent = "toggle-color-scheme" }) },
+	-- { key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ EmitEvent = "toggle-color-scheme" }) },
 }
 
 for i = 1, 8 do

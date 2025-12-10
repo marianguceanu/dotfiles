@@ -3,9 +3,6 @@ require("marin.configs.constants")
 
 -- stylua: ignore
 local colors = {
-	--[[
-	bg       = Colors.bg_lighter,
-	fg       = '#bbc2cf',
 	yellow   = '#ECBE7B',
 	cyan     = '#96a6c8',
 	darkblue = '#081633',
@@ -14,7 +11,10 @@ local colors = {
 	violet   = '#a9a1e1',
 	magenta  = '#c678dd',
 	blue     = '#51afef',
-	red      = '#ec5f67', ]]
+	red      = '#ec5f67',
+	--[[
+	bg       = Colors.bg_lighter,
+	fg       = '#bbc2cf',]]
 }
 
 local conditions = {

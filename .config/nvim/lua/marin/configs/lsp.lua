@@ -6,14 +6,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		bufmap("n", "<leader>K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 		bufmap("n", "<leader>rr", "<cmd>lua vim.lsp.buf.references()<cr>")
-		bufmap("n", "<leader>ri", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+		bufmap("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
 		bufmap("n", "<leader>rt", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 		bufmap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-		bufmap("n", "<leader>ra", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+		bufmap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 		bufmap("n", "<leader>e", "<cmd> lua vim.diagnostic.open_float()<cr>")
+		bufmap("n", "<leader>vws", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
+		bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+		bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 		bufmap("n", "gO", "<cmd>lua vim.lsp.buf.document_symbol()<cr>")
 		bufmap({ "i", "s", "n" }, "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
-		bufmap("n", "<leader>vws", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
 	end,
 })
 vim.lsp.config("luals", {
