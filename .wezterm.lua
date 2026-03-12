@@ -2,6 +2,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+
 -- Setting the default program to launch if on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
@@ -34,7 +35,7 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -69,6 +70,7 @@ config.keys = {
 	{ key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
 	{ key = "8", mods = "CTRL", action = wezterm.action.ActivateTab(7) },
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
+	-- { key = "F11", action = wezterm.window.toggle_fullscreen() }
 	-- { key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ EmitEvent = "toggle-color-scheme" }) },
 }
 
