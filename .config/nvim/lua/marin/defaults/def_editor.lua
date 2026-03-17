@@ -39,3 +39,12 @@ vim.keymap.set("n", "<C-w>.", "5<C-w>>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>,", "5<C-w><", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-L>", "20zl", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-H>", "20zh", { noremap = true, silent = true })
+
+-- Custom commands
+vim.api.nvim_create_user_command("FormatDisable", function()
+	vim.b.disable_autoformat = true
+end, {})
+
+vim.api.nvim_create_user_command("FormatEnable", function()
+	vim.b.disable_autoformat = false
+end, {})

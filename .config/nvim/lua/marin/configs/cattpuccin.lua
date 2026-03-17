@@ -9,7 +9,7 @@ require("catppuccin").setup({
 		transparent = false, -- enable transparent floating windows
 		solid = true, -- use solid styling for floating windows, see |winborder|
 	},
-	show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
 	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
 	dim_inactive = {
 		enabled = false, -- dims the background color of inactive window
@@ -20,7 +20,7 @@ require("catppuccin").setup({
 	no_bold = false, -- Force no bold
 	no_underline = false, -- Force no underline
 	styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-		comments = {}, -- Change the style of comments
+		comments = { "italic" }, -- Change the style of comments
 		conditionals = { "italic" },
 		loops = {},
 		functions = {},
@@ -58,7 +58,7 @@ require("catppuccin").setup({
 	default_integrations = true,
 	auto_integrations = false,
 	integrations = {
-		cmp = true,
+		cmp = false,
 		gitsigns = true,
 		nvimtree = true,
 		notify = false,
@@ -71,4 +71,4 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin-nvim")

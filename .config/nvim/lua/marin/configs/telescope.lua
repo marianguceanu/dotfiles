@@ -1,5 +1,21 @@
 require("telescope").setup({
 	defaults = {
+		border = true,
+		borderchars = {
+			"█",
+			"█",
+			"█",
+			"█",
+			"█",
+			"█",
+			"█",
+			"█",
+		},
+		layout_config = {
+			prompt_position = "top",
+		},
+		sorting_strategy = "ascending",
+
 		mappings = {
 			i = {
 				["<C-u>"] = false,
@@ -8,6 +24,8 @@ require("telescope").setup({
 		},
 	},
 })
+
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#54565b" })
 
 pcall(require("telescope").load_extension, "fzf")
 

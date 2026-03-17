@@ -1,4 +1,3 @@
--- Necessary imports for configuration
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
@@ -11,11 +10,12 @@ end
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Catppuccin Mocha"
+		-- return "NvimDark"
 	else
 		return "Catppuccin Latte"
+		-- return "NvimLight"
 	end
 end
-
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- Font and enabling the ligatures
@@ -39,16 +39,6 @@ config.window_decorations = "RESIZE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
-
-wezterm.on("toggle-color-scheme", function(window)
-	local overrides = window:get_config_overrides() or {}
-	if overrides.color_scheme == "Light Scheme" then
-		overrides.color_scheme = "Dark Scheme"
-	else
-		overrides.color_scheme = "Light Scheme"
-	end
-	window:set_config_overrides(overrides)
-end)
 
 -- Simple keys for switching between panes
 config.keys = {
@@ -84,46 +74,48 @@ for i = 1, 8 do
 end
 
 -- config.enable_wayland = true
---
---[[ local background_color = "#181818"
-local background_color_rest = "#282828" ]]
 
---[[ local background_color = "#1f2329"
-local background_color_rest = "#2f3339" ]]
-
---[[ local background_color = "#14161b"
-local background_color_rest = "#34363b" ]]
-
---[[ config.color_schemes = {
-	["Light Scheme"] = {
-		background = "#f8f8f8",
-		foreground = "#272822",
-	},
-	["Dark Scheme"] = {
-		background = background_color,
-		foreground = "#f8f8f2",
-	},
-}
-
--- Background and tab bar modifications so that they stay one color
-config.colors = {
-	tab_bar = {
-		background = background_color_rest,
-		active_tab = {
-			bg_color = background_color_rest,
-			fg_color = "white",
-			italic = true,
+---@diagnostic disable-next-line: unused-function, unused-local
+local function gruber_darker_colorschemes()
+	local background_color = "#181818"
+	local background_color_rest = "#282828"
+	config.color_schemes = {
+		["Light Scheme"] = {
+			background = "#f8f8f8",
+			foreground = "#272822",
 		},
-		inactive_tab = {
-			bg_color = background_color_rest,
-			fg_color = "grey",
+		["Dark Scheme"] = {
+			background = background_color,
+			foreground = "#f8f8f2",
 		},
-		new_tab = {
-			bg_color = background_color_rest,
-			fg_color = "white",
-		},
-	},
-} ]]
+	}
 
--- and finally, return the configuration to wezterm
+	config.colors = {
+		tab_bar = {
+			background = background_color_rest,
+			active_tab = {
+				bg_color = background_color_rest,
+				fg_color = "white",
+				italic = true,
+			},
+			inactive_tab = {
+				bg_color = background_color_rest,
+				fg_color = "grey",
+			},
+			new_tab = {
+				bg_color = background_color_rest,
+				fg_color = "white",
+			},
+		},
+	}
+	local function scheme_for_appearance(appearance)
+		if appearance:find("Dark") then
+			return "Dark Scheme"
+		else
+			return "Light Scheme"
+		end
+	end
+	config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+end
+
 return config
