@@ -1,0 +1,50 @@
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(event)
+		local bufmap = function(mode, rhs, lhs)
+			vim.keymap.set(mode, rhs, lhs, { buffer = event.buf })
+		end
+
+		bufmap("n", "<leader>K", function()
+			vim.lsp.buf.hover()
+		end)
+		bufmap("n", "<leader>rr", function()
+			vim.lsp.buf.references()
+		end)
+		bufmap("n", "<leader>gi", function()
+			vim.lsp.buf.implementation()
+		end)
+		bufmap("n", "<leader>rt", function()
+			vim.lsp.buf.type_definition()
+		end)
+		bufmap("n", "<leader>rn", function()
+			vim.lsp.buf.rename()
+		end)
+		bufmap("n", "<leader>ca", function()
+			vim.lsp.buf.code_action()
+		end)
+		bufmap("n", "<leader>e", function()
+			vim.diagnostic.open_float()
+		end)
+		bufmap("n", "<leader>vws", function()
+			vim.lsp.buf.workspace_symbol()
+		end)
+		bufmap("n", "gd", function()
+			vim.lsp.buf.definition()
+		end)
+		bufmap("n", "gD", function()
+			vim.lsp.buf.declaration()
+		end)
+		bufmap("n", "gO", function()
+			vim.lsp.buf.document_symbol()
+		end)
+		bufmap({ "i", "s", "n" }, "<C-s>", function()
+			vim.lsp.buf.signature_help()
+		end)
+	end,
+})
+
+require("mason-lspconfig").setup({
+	handlers = {
+		vim.lsp.config,
+	},
+})

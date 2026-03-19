@@ -1,7 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-
 -- Setting the default program to launch if on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
@@ -19,8 +18,8 @@ end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- Font and enabling the ligatures
-config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "Regular" })
-config.font_size = 14
+config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
+config.font_size = 15
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
@@ -35,7 +34,7 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -75,6 +74,13 @@ end
 
 -- config.enable_wayland = true
 
+local function scheme_for_appearance_custom(appearance)
+	if appearance:find("Dark") then
+		return "Dark Scheme"
+	else
+		return "Light Scheme"
+	end
+end
 ---@diagnostic disable-next-line: unused-function, unused-local
 local function gruber_darker_colorschemes()
 	local background_color = "#181818"
@@ -108,14 +114,7 @@ local function gruber_darker_colorschemes()
 			},
 		},
 	}
-	local function scheme_for_appearance(appearance)
-		if appearance:find("Dark") then
-			return "Dark Scheme"
-		else
-			return "Light Scheme"
-		end
-	end
-	config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+	config.color_scheme = scheme_for_appearance_custom(wezterm.gui.get_appearance())
 end
 
 return config

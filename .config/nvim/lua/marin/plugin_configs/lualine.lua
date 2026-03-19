@@ -1,5 +1,5 @@
 local lualine = require("lualine")
-require("marin.configs.constants")
+require("marin.plugin_configs.constants")
 
 -- stylua: ignore
 local colors = {
@@ -12,8 +12,6 @@ local colors = {
 	magenta  = '#c678dd',
 	blue     = '#51afef',
 	red      = '#ec5f67',
-	--[[ bg       = Colors.bg_lighter,
-	fg       = '#bbc2cf', ]]
 }
 
 local conditions = {
@@ -35,10 +33,10 @@ local config = {
 		-- Disable sections and component separators
 		component_separators = "",
 		section_separators = "",
-		theme = {
+		--[[ theme = {
 			normal = { c = { fg = colors.fg, bg = colors.bg } },
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
-		},
+		}, ]]
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -185,7 +183,6 @@ ins_right({
 	cond = conditions.hide_in_width,
 })
 
--- Now don't forget to initialize lualine
 lualine.setup(config)
 
 --[[ vim.opt.termguicolors = true
