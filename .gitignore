@@ -2,4 +2,4 @@ pack
 nvim/*.json
 qtile/__pycache__/
 .luarc.json
-*/lazy-lock.json
+lazy-lock.json
