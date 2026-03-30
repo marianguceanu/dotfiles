@@ -1,10 +1,9 @@
 local lualine = require("lualine")
-require("marin.plugin_configs.constants")
 
 -- stylua: ignore
 local colors = {
 	yellow   = '#ECBE7B',
-	cyan     = '#96a6c8',
+	cyan     = '#6676c8',
 	darkblue = '#081633',
 	green    = '#98be65',
 	orange   = '#FF8800',
@@ -12,6 +11,7 @@ local colors = {
 	magenta  = '#c678dd',
 	blue     = '#51afef',
 	red      = '#ec5f67',
+	darkpink = '#d40096'
 }
 
 local conditions = {
@@ -33,10 +33,6 @@ local config = {
 		-- Disable sections and component separators
 		component_separators = "",
 		section_separators = "",
-		--[[ theme = {
-			normal = { c = { fg = colors.fg, bg = colors.bg } },
-			inactive = { c = { fg = colors.fg, bg = colors.bg } },
-		}, ]]
 	},
 	sections = {
 		-- these are to remove the defaults
@@ -119,24 +115,17 @@ ins_left({
 		return mode_format[vim.fn.mode()]
 	end,
 	color = function()
-		return { fg = mode_color[vim.fn.mode()] }
+		return { fg = mode_color[vim.fn.mode()], gui = "bold" }
 	end,
 	padding = { left = 2, right = 1 },
 })
-ins_left({
-	"branch",
-	icon = " ",
-	color = { fg = "pink", gui = "bold" },
-})
+ins_left({ "branch", icon = " ", color = { gui = "bold", fg = colors.darkpink } })
 
-ins_left({
-	"filename",
-	color = { fg = colors.cyan },
-})
+ins_left({ "filename", color = { gui = "bold" } })
 
 ins_left({ "location" })
 
-ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+ins_left({ "progress" })
 
 ins_left({
 	"diagnostics",
@@ -161,14 +150,14 @@ ins_right({
 	"o:encoding",
 	fmt = string.upper,
 	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
+	color = { gui = "bold" },
 })
 
 ins_right({
 	"fileformat",
 	fmt = string.upper,
 	icons_enabled = true,
-	color = { fg = "888888", gui = "bold" },
+	color = { gui = "bold" },
 })
 ins_right({ "filesize" })
 
@@ -176,35 +165,11 @@ ins_right({
 	"diff",
 	symbols = { added = " ", modified = "󰝤 ", removed = " " },
 	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.orange },
-		removed = { fg = colors.red },
+		added = { fg = colors.green, gui = "bold" },
+		modified = { fg = colors.orange, gui = "bold" },
+		removed = { fg = colors.red, gui = "bold" },
 	},
 	cond = conditions.hide_in_width,
 })
 
 lualine.setup(config)
-
---[[ vim.opt.termguicolors = true
-require("bufferline").setup({})
-ins_left({
-	-- Lsp server name .
-	function()
-		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-		local clients = vim.lsp.get_clients()
-		if next(clients) == nil then
-			return msg
-		end
-		for _, client in ipairs(clients) do
-			local filetypes = client.config.filetypes
-			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-				return client.name
-			end
-		end
-		return msg
-	end,
-	icon = " ",
-	padding = { left = 0, right = 0 },
-})
-]]
