@@ -37,6 +37,6 @@ vim.cmd([[set cursorline]])
 
 -- setup must be called before loading
 -- vim.cmd.colorscheme("catppuccin-nvim")
+-- vim.cmd.colorscheme("rose-pine")
 
 vim.cmd.colorscheme("lunaperche")
--- vim.cmd.colorscheme("rose-pine")
