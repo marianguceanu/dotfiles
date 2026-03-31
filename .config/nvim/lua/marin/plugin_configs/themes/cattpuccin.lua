@@ -1,4 +1,4 @@
-require("catppuccin").setup({
+require(".config.nvim.lua.marin.plugins.theme_catppuccin").setup({
 	flavour = "auto", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",

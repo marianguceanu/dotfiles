@@ -9,13 +9,15 @@ end
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		-- return "Catppuccin Mocha"
-		return "NvimDark"
+		-- return "NvimDark"
+		return "rose-pine"
 	else
 		-- return "Catppuccin Latte"
-		return "NvimLight"
+		-- return "NvimLight"
+		return "rose-pine-dawn"
 	end
 end
-config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+-- config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "Regular" })
