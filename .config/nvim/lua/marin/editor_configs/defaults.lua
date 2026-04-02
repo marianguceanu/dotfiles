@@ -35,8 +35,5 @@ vim.opt.wrap = false
 vim.cmd([[set colorcolumn=120]])
 vim.cmd([[set cursorline]])
 
--- setup must be called before loading
--- vim.cmd.colorscheme("catppuccin-nvim")
--- vim.cmd.colorscheme("rose-pine")
-
 vim.cmd.colorscheme("lunaperche")
+vim.o.winborder = "single"

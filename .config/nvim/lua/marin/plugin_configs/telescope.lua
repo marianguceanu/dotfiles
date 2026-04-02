@@ -2,6 +2,15 @@ require("telescope").setup({
 	defaults = {
 		border = true,
 		borderchars = {
+			"─", -- top
+			"│", -- right
+			"─", -- bottom
+			"│", -- left
+			"┌", -- top-left
+			"┐", -- top-right
+			"┘", -- bottom-right
+			"└", -- bottom-left
+		}, --[[ borderchars = {
 			"█",
 			"█",
 			"█",
@@ -10,9 +19,10 @@ require("telescope").setup({
 			"█",
 			"█",
 			"█",
-		},
+		}, ]]
 		layout_config = {
 			prompt_position = "top",
+			width = 0.9,
 		},
 		sorting_strategy = "ascending",
 

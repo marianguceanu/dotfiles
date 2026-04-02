@@ -11,8 +11,6 @@ require("marin.plugin_configs.formatting")
 require("marin.plugin_configs.snacks")
 require("marin.plugin_configs.lualine")
 require("marin.plugin_configs.gitsigns")
-require("marin.plugin_configs.themes.rosepine")
-require("marin.plugin_configs.themes.cattpuccin")
 
 -- Further vim api configurations
 require("marin.editor_configs.defaults")

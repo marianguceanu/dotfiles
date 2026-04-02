@@ -8,17 +8,9 @@ end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		-- return "Catppuccin Mocha"
-		-- return "NvimDark"
-		-- return "rose-pine"
-		return "3024 Night"
-		-- return "GruvboxDark"
+		return "Builtin Dark"
 	else
-		-- return "Catppuccin Latte"
-		-- return "NvimLight"
-		-- return "rose-pine-dawn"
-		return "3024 Day"
-		-- return "GruvboxLight"
+		return "Builtin Light"
 	end
 end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
@@ -26,7 +18,7 @@ config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 -- Font and enabling the ligatures
 config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "Regular" })
 config.font_size = 14
-config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 config.warn_about_missing_glyphs = false
 
 config.inactive_pane_hsb = {
