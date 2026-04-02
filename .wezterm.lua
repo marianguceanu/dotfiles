@@ -11,12 +11,14 @@ local function scheme_for_appearance(appearance)
 		-- return "Catppuccin Mocha"
 		-- return "NvimDark"
 		-- return "rose-pine"
-		return "3024 (base16)"
+		return "3024 Night"
+		-- return "GruvboxDark"
 	else
 		-- return "Catppuccin Latte"
 		-- return "NvimLight"
 		-- return "rose-pine-dawn"
 		return "3024 Day"
+		-- return "GruvboxLight"
 	end
 end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
