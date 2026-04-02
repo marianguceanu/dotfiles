@@ -25,8 +25,6 @@ require("telescope").setup({
 	},
 })
 
-vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#54565b" })
-
 pcall(require("telescope").load_extension, "fzf")
 
 local builtin = require("telescope.builtin")
@@ -48,4 +46,6 @@ vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch curren
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
+vim.keymap.set("n", "<leader>ts", builtin.treesitter, { desc = "[S]earch [R]esume" })
+vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[S]earch [R]esume" })
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, {})

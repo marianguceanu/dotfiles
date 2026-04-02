@@ -1,3 +1,4 @@
+local builtin = require("telescope.builtin")
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local bufmap = function(mode, rhs, lhs)
@@ -7,9 +8,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		bufmap("n", "<leader>K", function()
 			vim.lsp.buf.hover()
 		end)
-		bufmap("n", "<leader>rr", function()
-			vim.lsp.buf.references()
-		end)
+		bufmap("n", "<leader>rr", builtin.lsp_references)
 		bufmap("n", "<leader>gi", function()
 			vim.lsp.buf.implementation()
 		end)
