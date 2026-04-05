@@ -9,7 +9,7 @@ local main = "#215578"
 local gray = "#242424"
 local white = "#ffffff"
 
-local nerd_font = "Fira Sans SemiBold 14"
+local nerd_font = "JetBrainsMono Nerd Font Propo 14"
 
 local theme = {}
 theme.font = nerd_font

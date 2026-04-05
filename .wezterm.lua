@@ -32,10 +32,10 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.window_decorations = "NONE"
+config.window_decorations = "TITLE|RESIZE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 
 -- Simple keys for switching between panes
 config.keys = {

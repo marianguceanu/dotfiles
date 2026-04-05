@@ -2,7 +2,7 @@
 
 cd ~ 
 sudo dnf install hyprland waybar hyprlock alacritty neovim git gh pamixer brightnessctl	network-manager-applet blueman papirus-icon-theme 
-sudo dnf install gtk2 gtk2-devel gtk3 gtk3-devel gtk4 gtk4-devel glib glib2 
+sudo dnf install gtk2 gtk2-devel gtk3 gtk3-devel gtk4 gtk4-devel glib glib2 kanshi
 
 # Making space for the configs
 # cd .config/

@@ -15,3 +15,7 @@ waybar &
 
 # waypaper --restore &
 swaybg -i ~/Pictures/Wallpapers/2.jpg
+
+# Start the display manager, as in what displays to use and how
+kanshi &
+flameshot &

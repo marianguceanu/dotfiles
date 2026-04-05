@@ -1,16 +1,23 @@
+---@diagnostic disable: undefined-global
 pcall(require, "luarocks.loader")
 
 local gears = require("gears")
 local awful = require("awful")
+
 require("awful.autofocus")
+
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local lain = require("lain")
+
 --local menubar       = require("menubar")
+
 local freedesktop = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
 require("awful.hotkeys_popup.keys")
+
 local mytable = awful.util.table or gears.table
 
 if awesome.startup_errors then
@@ -163,9 +170,9 @@ local myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "Manual",      string.format("%s -e man awesome", terminal) },
+	{ "Manual", string.format("%s -e man awesome", terminal) },
 	{ "Edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
-	{ "Restart",     awesome.restart },
+	{ "Restart", awesome.restart },
 	{
 		"Quit",
 		function()
@@ -257,7 +264,7 @@ root.buttons(mytable.join(
 -- {{{ Key bindings
 
 globalkeys = mytable.join(
--- Destroy all notifications
+	-- Destroy all notifications
 	awful.key({ "Control" }, "space", function()
 		naughty.destroy_all_notifications()
 	end, { description = "destroy all notifications", group = "hotkeys" }),
@@ -340,8 +347,7 @@ globalkeys = mytable.join(
 	awful.key({ modkey, "Control" }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, { description = "focus the previous screen", group = "screen" }),
-	awful.key({ modkey }, "u", awful.client.urgent.jumpto,
-		{ description = "jump to urgent client", group = "client" }),
+	awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 	awful.key({ modkey }, "Tab", function()
 		awful.client.focus.byidx(1)
 	end, { description = "cycle between tabs increasingly", group = "client" }),
@@ -445,8 +451,7 @@ globalkeys = mytable.join(
 		beautiful.volume.update()
 	end, { description = "volume down", group = "hotkeys" }),
 	awful.key({}, "XF86AudioMute", function()
-		os.execute(string.format("amixer -q set %s toggle",
-			beautiful.volume.togglechannel or beautiful.volume.channel))
+		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
 		beautiful.volume.update()
 	end, { description = "toggle mute", group = "hotkeys" }),
 	awful.key({ altkey, "Control" }, "m", function()
@@ -479,12 +484,11 @@ globalkeys = mytable.join(
 	awful.key({ modkey }, "x", function()
 		awful.spawn("wlogout")
 	end, { description = "lua execute prompt", group = "awesome" })
---]]
+	--]]
 )
 
 clientkeys = mytable.join(
-	awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client,
-		{ description = "magnify client", group = "client" }),
+	awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client, { description = "magnify client", group = "client" }),
 	awful.key({ modkey }, "f", function(c)
 		c.fullscreen = not c.fullscreen
 		c:raise()
