@@ -34,6 +34,3 @@ vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearc
 vim.opt.wrap = false
 vim.cmd([[set colorcolumn=120]])
 vim.cmd([[set cursorline]])
-
-vim.cmd.colorscheme("lunaperche")
-vim.o.winborder = "single"

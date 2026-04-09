@@ -5,8 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
--- Keymap for toggling
-vim.keymap.set("n", "<S-e>", ":Oil<CR>", { noremap = true, silent = true })
 require("oil").setup({
 	-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
 	-- Set to false if you still want to use netrw.
@@ -178,10 +176,10 @@ require("oil").setup({
 	},
 	-- Configuration for the floating SSH window
 	ssh = {
-		border = "rounded",
+		border = "single",
 	},
 	-- Configuration for the floating keymaps help window
 	keymaps_help = {
-		border = "rounded",
+		border = "single",
 	},
 })

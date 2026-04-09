@@ -28,8 +28,8 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = { border = "solid" },
-		documentation = { border = "solid" },
+		completion = { border = "single" },
+		documentation = { border = "single" },
 	},
 	completion = {
 		completeopt = "menu,menuone,noinsert",
