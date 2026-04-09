@@ -13,8 +13,4 @@ require("marin.plugin_configs.lualine")
 require("marin.plugin_configs.gitsigns")
 
 -- Further vim api configurations
-require("marin.editor_configs.defaults")
-require("marin.editor_configs.custom_commands")
-require("marin.editor_configs.keymaps")
-require("marin.editor_configs.colorscheme")
-require("marin.editor_configs.diagnostics")
+require("marin.editor_configs.config")
