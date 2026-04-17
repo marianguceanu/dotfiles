@@ -36,7 +36,7 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
