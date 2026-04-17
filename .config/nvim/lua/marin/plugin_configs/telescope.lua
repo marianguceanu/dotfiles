@@ -11,16 +11,7 @@ require("telescope").setup({
 			"┘", -- bottom-right
 			"└", -- bottom-left
 		},
-		--[[ borderchars = {
-			"█",
-			"█",
-			"█",
-			"█",
-			"█",
-			"█",
-			"█",
-			"█",
-		}, ]]
+		-- borderchars = {"█","█","█","█","█","█","█","█",},
 		winblend = 0,
 		layout_config = {
 			prompt_position = "top",

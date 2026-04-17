@@ -1,6 +1,6 @@
 function Highlight()
 	-- On search
-	vim.opt.hlsearch = true
+	vim.opt.hlsearch = false
 	vim.opt.incsearch = true
 
 	-- On yank

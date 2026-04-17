@@ -62,9 +62,7 @@ local config = {
 	},
 }
 local config_sections = {
-	lualine_a = {},
-	lualine_b = {},
-	lualine_c = {
+	lualine_a = {
 
 		{
 			-- mode component
@@ -72,27 +70,43 @@ local config_sections = {
 				return mode_format[vim.fn.mode()]
 			end,
 			color = { gui = "bold" },
-			padding = { left = 2, right = 1 },
+			padding = { left = 2, right = 2 },
 		},
-
+	},
+	lualine_b = {
 		{
 			"branch",
 			icon = " ",
 			color = { gui = "bold" },
 		},
+	},
+	lualine_c = {
+		{
+			"diagnostics",
+			color = { gui = "bold" },
+		},
+		{
+			"filename",
+			path = 1,
+			color = { gui = "bold" },
+		},
+	},
+	lualine_x = {
+		"progress",
+		"location",
+	},
+	lualine_y = {
 
 		{
 			"diff",
 			symbols = { added = " ", modified = "󰝤 ", removed = " " },
+			color = { gui = "bold" },
 		},
-
-		{ "diagnostics", color = { gui = "bold" } },
-
-		{ "filename", path = 1, color = { gui = "bold" } },
 	},
-	lualine_x = { "fileformat", "encoding", "progress", "location" },
-	lualine_y = {},
-	lualine_z = {},
+	lualine_z = {
+		"fileformat",
+		"encoding",
+	},
 }
 
 config.sections = config_sections

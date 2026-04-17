@@ -10,9 +10,11 @@ end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Builtin Dark"
+		-- return "Builtin Dark"
+		return "Catppuccin Mocha"
 	else
-		return "Builtin Light"
+		-- return "Builtin Light"
+		return "Catppuccin Latte"
 	end
 end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
@@ -37,7 +39,7 @@ config.window_padding = {
 config.window_decorations = "RESIZE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 
 -- Simple keys for switching between panes
 config.keys = {
