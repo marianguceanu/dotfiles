@@ -121,4 +121,5 @@ local function gruber_darker_colorschemes()
 	config.color_scheme = scheme_for_appearance_custom(wezterm.gui.get_appearance())
 end
 
+gruber_darker_colorschemes()
 return config

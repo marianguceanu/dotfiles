@@ -1,5 +1,4 @@
 require("marin.lazy")
-
 -- Plugins that require a more complex setup
 require("marin.plugin_configs.completion")
 require("marin.plugin_configs.lsp")

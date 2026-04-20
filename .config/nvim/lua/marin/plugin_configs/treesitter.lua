@@ -24,7 +24,7 @@ vim.defer_fn(function()
 				"java",
 				"tsx",
 			},
-			auto_install = false,
+			auto_install = true,
 
 			highlight = { enable = true },
 			indent = { enable = true },

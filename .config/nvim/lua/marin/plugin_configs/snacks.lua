@@ -3,7 +3,7 @@ require("snacks").setup(
 	---@type snacks.Config
 	{
 		explorer = { enabled = true },
-		words = { enabled = true },
+		words = { enabled = false },
 		statuscolumn = { enabled = true },
 		scroll = { enabled = true },
 		picker = { enabled = true },
@@ -12,7 +12,7 @@ require("snacks").setup(
 		indent = { enabled = true },
 		input = { enabled = true },
 		notifier = { enabled = true },
-		quickfile = { enabled = true },
-		scope = { enabled = true },
+		quickfile = { enabled = false },
+		scope = { enabled = false },
 	}
 )

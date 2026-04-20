@@ -62,8 +62,9 @@ local config = {
 	},
 }
 local config_sections = {
-	lualine_a = {
-
+	lualine_a = {},
+	lualine_b = {},
+	lualine_c = {
 		{
 			-- mode component
 			function()
@@ -72,41 +73,38 @@ local config_sections = {
 			color = { gui = "bold" },
 			padding = { left = 2, right = 2 },
 		},
-	},
-	lualine_b = {
 		{
 			"branch",
 			icon = " ",
-			color = { gui = "bold" },
+			color = { gui = "bold", fg = "pink" },
 		},
-	},
-	lualine_c = {
+		{
+			"diff",
+			symbols = { added = " ", modified = "󰜥 ", removed = " " },
+			color = { gui = "bold" },
+			diff_color = {
+				added = { fg = "#00FF00" },
+				removed = { fg = "#FF0000" },
+				modified = { fg = "#FFFF00" },
+			},
+		},
 		{
 			"diagnostics",
 			color = { gui = "bold" },
 		},
+	},
+	lualine_x = {
 		{
 			"filename",
 			path = 1,
-			color = { gui = "bold" },
 		},
-	},
-	lualine_x = {
 		"progress",
 		"location",
-	},
-	lualine_y = {
-
-		{
-			"diff",
-			symbols = { added = " ", modified = "󰝤 ", removed = " " },
-			color = { gui = "bold" },
-		},
-	},
-	lualine_z = {
 		"fileformat",
 		"encoding",
 	},
+	lualine_y = {},
+	lualine_z = {},
 }
 
 config.sections = config_sections
