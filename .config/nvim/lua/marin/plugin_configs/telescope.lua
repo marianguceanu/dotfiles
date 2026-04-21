@@ -4,7 +4,6 @@ require("telescope").setup({
 			prompt_position = "top",
 			width = 0.85,
 			height = 0.99,
-			preview_width = 0.5,
 		},
 		sorting_strategy = "ascending",
 

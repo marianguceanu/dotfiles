@@ -10,14 +10,11 @@ end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		-- return "Builtin Dark"
-		-- return "Catppuccin Mocha"
 		-- return "Atelierseaside (dark) (terminal.sexy)"
-		return "Black Metal (Bathory) (base16)"
+		return "Material Darker (base16)"
 	else
-		-- return "Builtin Light"
-		-- return "Catppuccin Latte"
-		return "Atelierseaside (light) (terminal.sexy)"
+		-- return "Atelierseaside (light) (terminal.sexy)"
+		return "Material Lighter (base16)"
 	end
 end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
