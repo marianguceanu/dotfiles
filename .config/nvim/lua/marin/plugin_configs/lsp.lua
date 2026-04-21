@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.buf.rename()
 		end)
 		bufmap("n", "<leader>ca", function()
-			vim.lsp.buf.code_action()
+			require("tiny-code-action").code_action()
 		end)
 		bufmap("n", "<leader>e", function()
 			vim.diagnostic.open_float()
@@ -28,6 +28,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		bufmap({ "i", "s", "n" }, "<C-s>", function()
 			vim.lsp.buf.signature_help()
 		end)
+	end,
+})
+
+-- Disable LSP highlighting
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		client.server_capabilities.semanticTokensProvider = nil
 	end,
 })
 
