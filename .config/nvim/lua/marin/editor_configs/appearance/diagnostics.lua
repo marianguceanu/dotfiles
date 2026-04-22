@@ -2,7 +2,7 @@ function Diagnostics()
 	vim.diagnostic.config({
 		virtual_text = {
 			spacing = 4,
-			prefix = "→", -- "●", "■", "▎", "→"
+			prefix = "●", -- "●", "■", "▎", "→"
 		},
 		signs = true,
 		underline = true,

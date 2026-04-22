@@ -1,27 +1,25 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.front_end = "OpenGL"
-
 -- Setting the default program to launch if on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
+else
+	config.enable_wayland = true
 end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		-- return "Atelierseaside (dark) (terminal.sexy)"
 		return "Material Darker (base16)"
 	else
-		-- return "Atelierseaside (light) (terminal.sexy)"
 		return "Material Lighter (base16)"
 	end
 end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- Font and enabling the ligatures
-config.font = wezterm.font("JetBrainsMono Nerd Font Propo", { weight = "Regular" })
-config.font_size = 15
+config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
+config.font_size = 18
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 
@@ -64,53 +62,4 @@ for i = 1, 8 do
 	})
 end
 
--- config.enable_wayland = true
-
----@diagnostic disable-next-line: unused-function, unused-local
-local function gruber_darker_colorschemes()
-	---@diagnostic disable-next-line: unused-function
-	local function scheme_for_appearance_custom(appearance)
-		if appearance:find("Dark") then
-			return "Dark Scheme"
-		else
-			return "Light Scheme"
-		end
-	end
-
-	local background_color = "#181818"
-	local background_color_rest = "#282828"
-
-	config.color_schemes = {
-		["Light Scheme"] = {
-			background = "#f8f8f8",
-			foreground = "#272822",
-		},
-		["Dark Scheme"] = {
-			background = background_color,
-			foreground = "#f8f8f2",
-		},
-	}
-
-	config.colors = {
-		tab_bar = {
-			background = background_color_rest,
-			active_tab = {
-				bg_color = background_color_rest,
-				fg_color = "white",
-				italic = true,
-			},
-			inactive_tab = {
-				bg_color = background_color_rest,
-				fg_color = "grey",
-			},
-			new_tab = {
-				bg_color = background_color_rest,
-				fg_color = "white",
-			},
-		},
-	}
-	config.color_scheme = scheme_for_appearance_custom(wezterm.gui.get_appearance())
-end
-
--- gruber_darker_colorschemes()
 return config
