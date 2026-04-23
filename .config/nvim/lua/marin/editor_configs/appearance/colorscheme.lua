@@ -1,18 +1,21 @@
 function Colorscheme()
-	require("base16-colorscheme").with_config({
-		telescope = false,
-		indentblankline = false,
-		notify = false,
-		ts_rainbow = false,
-		cmp = false,
-		illuminate = false,
-		dapui = false,
+	require("gruber-darker").setup({
+		bold = true,
+		invert = {
+			signs = false,
+			tabline = false,
+			visual = false,
+		},
+		italic = {
+			strings = false,
+			comments = true,
+			operators = false,
+			folds = true,
+		},
+		undercurl = true,
+		underline = true,
 	})
-	vim.cmd.colorscheme("base16-material-darker")
-
-	--[[ vim.cmd.colorscheme("ron")
-	require("marin.editor_configs.appearance.transparency")
-	Transparency() ]]
+	vim.cmd.colorscheme("gruber-darker")
 
 	vim.o.winborder = "single"
 	vim.o.termguicolors = true

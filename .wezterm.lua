@@ -10,7 +10,8 @@ end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Material Darker (base16)"
+		-- return "Material Darker (base16)"
+		return "Gruber (base16)"
 	else
 		return "Material Lighter (base16)"
 	end

@@ -82,11 +82,12 @@ local config_sections = {
 			"diff",
 			symbols = { added = " ", modified = "󰜥 ", removed = " " },
 			color = { gui = "bold" },
-			diff_color = {
+			-- More contrasty
+			--[[ diff_color = {
 				added = { fg = "#00FF00" },
 				removed = { fg = "#FF0000" },
 				modified = { fg = "#FFFF00" },
-			},
+			}, ]]
 		},
 		{
 			"diagnostics",
