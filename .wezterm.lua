@@ -4,8 +4,10 @@ local config = wezterm.config_builder()
 -- Setting the default program to launch if on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
+	config.window_decorations = "RESIZE"
 else
 	config.enable_wayland = true
+	config.window_decorations = "NONE"
 end
 
 local function scheme_for_appearance(appearance)
@@ -35,7 +37,6 @@ config.window_padding = {
 	top = 20,
 	bottom = 0,
 }
-config.window_decorations = "NONE"
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
