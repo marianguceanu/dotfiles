@@ -1,5 +1,6 @@
 require("marin.lazy")
--- Plugins that require a more complex setup
+
+-- Plugins setup
 require("marin.plugin_configs.completion")
 require("marin.plugin_configs.lsp")
 require("marin.plugin_configs.telescope")
@@ -10,5 +11,6 @@ require("marin.plugin_configs.snacks")
 require("marin.plugin_configs.lualine")
 require("marin.plugin_configs.gitsigns")
 
--- Further vim api configurations
-require("marin.editor_configs.config")
+require("marin.editor_configs.appearance")
+require("marin.editor_configs.keymaps")
+require("marin.editor_configs.treesitter")
