@@ -17,7 +17,7 @@ local function colorscheme()
 	})
 	vim.cmd.colorscheme("gruber-darker")
 
-	vim.o.winborder = "single"
+	vim.o.winborder = "solid"
 	vim.o.termguicolors = true
 end
 
@@ -75,6 +75,20 @@ local function line()
 	vim.cmd("set scrolloff=50")
 end
 
+-- Complete the solid border look
+local function complementary_highlights()
+	vim.cmd([[
+		highlight FloatBorder		guibg=#383838 guifg=#383838
+		highlight TelescopeBorder	guibg=#383838 guifg=#383838
+		highlight SnacksInputBorder 	guibg=#282828 guifg=#282828
+		highlight SnacksInputTitle	guibg=#282828 guifg=#73c936 gui=bold
+		highlight NormalFloat		guibg=#383838
+		highlight TelescopePromptTitle  guifg=#ffdd33
+		highlight TelescopePreviewTitle guifg=#95a99f
+		highlight TelescopeResultsTitle guifg=#73c936
+	]])
+end
+
 
 -- stylua: ignore
 ---@diagnostic disable-next-line: unused-function
@@ -113,3 +127,4 @@ code_folding()
 diagnostics()
 search_casing_highlight_yank()
 line()
+complementary_highlights()

@@ -5,7 +5,7 @@ require("snacks").setup(
 		explorer = { enabled = true },
 		words = { enabled = false },
 		statuscolumn = { enabled = true },
-		scroll = { enabled = false},
+		scroll = { enabled = false },
 		picker = { enabled = true },
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
@@ -13,6 +13,6 @@ require("snacks").setup(
 		input = { enabled = true },
 		notifier = { enabled = true },
 		quickfile = { enabled = false },
-		scope = { enabled = true},
+		scope = { enabled = true },
 	}
 )
