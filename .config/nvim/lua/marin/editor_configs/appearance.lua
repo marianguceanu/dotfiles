@@ -15,10 +15,12 @@ local function colorscheme()
 		undercurl = true,
 		underline = true,
 	})
-	vim.cmd.colorscheme("gruber-darker")
 
+	vim.cmd.colorscheme("gruber-darker")
 	vim.o.winborder = "solid"
 	vim.o.termguicolors = true
+	-- For seeing colors of hexcodes in editor
+	require("colorizer").setup()
 end
 
 -- Complete the solid border look
