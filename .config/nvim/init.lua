@@ -1,9 +1,10 @@
 require("marin.lazy")
 
 -- Plugins setup
+require("marin.plugin_configs.auto")
 require("marin.plugin_configs.lsp")
 require("marin.plugin_configs.telescope")
-require("marin.plugin_configs.filetree")
+require("marin.plugin_configs.oil")
 require("marin.plugin_configs.todos")
 require("marin.plugin_configs.formatting")
 require("marin.plugin_configs.snacks")

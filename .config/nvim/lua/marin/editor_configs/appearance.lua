@@ -22,20 +22,25 @@ local function colorscheme()
 	-- For seeing colors of hexcodes in editor
 	require("colorizer").setup()
 end
+colorscheme()
 
 -- Complete the solid border look
 local function complementary_highlights()
 	vim.cmd([[
 		highlight FloatBorder			guibg=#383838 guifg=#383838
-		highlight TelescopeBorder		guibg=#383838 guifg=#383838
+		highlight NormalFloat			guibg=#383838
+		highlight Comment 			guifg=#888888
+
 		highlight SnacksInputBorder 		guibg=#282828 guifg=#282828
 		highlight SnacksInputTitle		guibg=#282828 guifg=#73c936 gui=bold
-		highlight NormalFloat			guibg=#383838
+
+		highlight TelescopeBorder		guibg=#383838 guifg=#383838
 		highlight TelescopePromptTitle  	guifg=#ffdd33
 		highlight TelescopePreviewTitle 	guifg=#95a99f
 		highlight TelescopeResultsTitle 	guifg=#73c936
 	]])
 end
+complementary_highlights()
 
 local function code_folding()
 	vim.opt.foldmethod = "expr"
@@ -46,6 +51,7 @@ local function code_folding()
 	vim.opt.foldlevelstart = 5
 	vim.opt.foldnestmax = 4
 end
+code_folding()
 
 local function diagnostics()
 	vim.diagnostic.config({
@@ -59,6 +65,7 @@ local function diagnostics()
 		severity_sort = true,
 	})
 end
+diagnostics()
 
 local function search_casing_highlight_yank()
 	-- On search
@@ -75,6 +82,7 @@ local function search_casing_highlight_yank()
 	-- On yank
 	vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]])
 end
+search_casing_highlight_yank()
 
 local function line()
 	-- Block cursor all the time
@@ -90,10 +98,4 @@ local function line()
 	vim.cmd("set relativenumber")
 	vim.cmd("set scrolloff=50")
 end
-
-colorscheme()
-code_folding()
-diagnostics()
-search_casing_highlight_yank()
 line()
-complementary_highlights()

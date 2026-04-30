@@ -4,5 +4,4 @@ return {
 		{ "nvim-telescope/telescope.nvim" },
 	},
 	event = "LspAttach",
-	opts = {},
 }
