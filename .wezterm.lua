@@ -10,26 +10,13 @@ else
 	config.window_decorations = "NONE"
 end
 
-local function scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		-- return "Material Darker (base16)"
-		return "Gruber (base16)"
-	else
-		return "Material Lighter (base16)"
-	end
-end
-config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.color_scheme = "Gruber (base16)"
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
 config.font_size = 18
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
-
-config.inactive_pane_hsb = {
-	saturation = 0.9,
-	brightness = 0.8,
-}
 
 config.window_padding = {
 	left = 10,
