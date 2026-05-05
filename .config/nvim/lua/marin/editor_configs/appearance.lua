@@ -27,17 +27,17 @@ colorscheme()
 -- Complete the solid border look
 local function complementary_highlights()
 	vim.cmd([[
-		highlight FloatBorder			guibg=#383838 guifg=#383838
-		highlight NormalFloat			guibg=#383838
-		highlight Comment 			guifg=#888888
+		highlight FloatBorder			guibg=#282828 guifg=#282828
+		highlight NormalFloat			guibg=#282828
+		" highlight Comment 			guifg=#888888
 
 		highlight SnacksInputBorder 		guibg=#282828 guifg=#282828
 		highlight SnacksInputTitle		guibg=#282828 guifg=#73c936 gui=bold
 
-		highlight TelescopeBorder		guibg=#383838 guifg=#383838
-		highlight TelescopePromptTitle  	guifg=#ffdd33
-		highlight TelescopePreviewTitle 	guifg=#95a99f
-		highlight TelescopeResultsTitle 	guifg=#73c936
+		highlight TelescopeBorder		guibg=#282828 guifg=#282828
+		highlight TelescopePromptTitle  	guibg=#ffdd33 guifg=black
+		highlight TelescopePreviewTitle 	guibg=#95a99f guifg=black
+		highlight TelescopeResultsTitle 	guibg=#73c936 guifg=black
 	]])
 end
 complementary_highlights()
