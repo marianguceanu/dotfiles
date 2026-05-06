@@ -1,1 +1,3 @@
-return { "blazkowolf/gruber-darker.nvim" }
+return {
+	-- "blazkowolf/gruber-darker.nvim"
+}

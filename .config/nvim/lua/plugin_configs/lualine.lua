@@ -27,7 +27,12 @@ local mode_format = {
 local config = {
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		-- theme = "auto",
+		theme = {
+			normal = { c = { fg = "white", bg = "#34363b" } },
+			inactive = { c = { fg = "white", bg = "#34363b" } },
+			-- inactive = { c = { fg = colors.fg, bg = colors.bg } },
+		},
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		always_divide_middle = true,
