@@ -1,3 +1,5 @@
+-- Code completions whilst typing
+
 require("blink.cmp").setup({
 	-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 	-- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -9,8 +11,6 @@ require("blink.cmp").setup({
 	-- C-n/C-p or Up/Down: Select next/previous item
 	-- C-e: Hide menu
 	-- C-k: Toggle signature help (if signature.enabled = true)
-	--
-	-- See :h blink-cmp-config-keymap for defining your own keymap
 	keymap = { preset = "enter" },
 
 	appearance = {

@@ -1,3 +1,5 @@
+-- Lazy bootstrapping as in lazy.nvim, the plugin manager.
+-- If I'll get on v0.12, I'll update to vim.pack
 -- Setting leader before loading lazy
 vim.g.mapleader = " "
 
@@ -15,4 +17,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("marin.plugins")
+require("lazy").setup("plugins")

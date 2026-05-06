@@ -1,3 +1,4 @@
+-- File manager that works just like the neovim buffer
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
