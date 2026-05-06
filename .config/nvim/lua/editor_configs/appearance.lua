@@ -1,5 +1,23 @@
+-- NOTE: Uncomment line in plugins/colorscheme_gruber_darker in order to setup this theme
 local function colorscheme()
-	vim.cmd.colorscheme("default")
+	require("gruber-darker").setup({
+		bold = true,
+		invert = {
+			signs = false,
+			tabline = false,
+			visual = false,
+		},
+		italic = {
+			strings = false,
+			comments = true,
+			operators = false,
+			folds = true,
+		},
+		undercurl = true,
+		underline = true,
+	})
+
+	vim.cmd.colorscheme("gruber-darker")
 	vim.o.winborder = "solid"
 	vim.o.termguicolors = true
 	-- For seeing colors of hexcodes in editor
@@ -10,16 +28,17 @@ colorscheme()
 -- Complete the solid border look
 local function complementary_highlights()
 	vim.cmd([[
-		highlight FloatBorder			guibg=#24262b 		guifg=#24262b
-		highlight NormalFloat			guibg=#24262b
+		highlight FloatBorder			guibg=#282828 guifg=#282828
+		highlight NormalFloat			guibg=#282828
+		" highlight Comment 			guifg=#888888
 
-		highlight SnacksInputBorder 		guibg=#34363b 		guifg=#34363b
-		highlight SnacksInputTitle		guibg=NvimLightGreen 	guifg=black 
+		highlight SnacksInputBorder 		guibg=#282828 guifg=#282828
+		highlight SnacksInputTitle		guibg=#282828 guifg=#73c936 gui=bold
 
-		highlight TelescopeBorder		guibg=#34363b 		guifg=#34363b
-		highlight TelescopePromptTitle  	guibg=NvimLightGreen 	guifg=black
-		highlight TelescopePreviewTitle 	guibg=NvimLightBlue 	guifg=black
-		highlight TelescopeResultsTitle 	guibg=NvimLightMagenta 	guifg=black
+		highlight TelescopeBorder		guibg=#282828 guifg=#282828
+		highlight TelescopePromptTitle  	guibg=#ffdd33 guifg=black
+		highlight TelescopePreviewTitle 	guibg=#95a99f guifg=black
+		highlight TelescopeResultsTitle 	guibg=#73c936 guifg=black
 	]])
 end
 complementary_highlights()
@@ -82,41 +101,28 @@ local function line()
 end
 line()
 
--- NOTE: Uncomment line in plugins/colorscheme_gruber_darker in order to setup this theme
 -- local function colorscheme()
--- require("gruber-darker").setup({
--- 	bold = true,
--- 	invert = {
--- 		signs = false,
--- 		tabline = false,
--- 		visual = false,
--- 	},
--- 	italic = {
--- 		strings = false,
--- 		comments = true,
--- 		operators = false,
--- 		folds = true,
--- 	},
--- 	undercurl = true,
--- 	underline = true,
--- })
+-- 	vim.cmd.colorscheme("default")
+-- 	vim.o.winborder = "solid"
+-- 	vim.o.termguicolors = true
+-- 	-- For seeing colors of hexcodes in editor
+-- 	require("colorizer").setup()
+-- end
+-- colorscheme()
 --
 -- -- Complete the solid border look
 -- local function complementary_highlights()
 -- 	vim.cmd([[
--- 		highlight FloatBorder			guibg=#282828 guifg=#282828
--- 		highlight NormalFloat			guibg=#282828
--- 		" highlight Comment 			guifg=#888888
+-- 		highlight FloatBorder			guibg=#24262b 		guifg=#24262b
+-- 		highlight NormalFloat			guibg=#24262b
 --
--- 		highlight SnacksInputBorder 		guibg=#282828 guifg=#282828
--- 		highlight SnacksInputTitle		guibg=#282828 guifg=#73c936 gui=bold
+-- 		highlight SnacksInputBorder 		guibg=#34363b 		guifg=#34363b
+-- 		highlight SnacksInputTitle		guibg=NvimLightGreen 	guifg=black
 --
--- 		highlight TelescopeBorder		guibg=#282828 guifg=#282828
--- 		highlight TelescopePromptTitle  	guibg=#ffdd33 guifg=black
--- 		highlight TelescopePreviewTitle 	guibg=#95a99f guifg=black
--- 		highlight TelescopeResultsTitle 	guibg=#73c936 guifg=black
+-- 		highlight TelescopeBorder		guibg=#34363b 		guifg=#34363b
+-- 		highlight TelescopePromptTitle  	guibg=NvimLightGreen 	guifg=black
+-- 		highlight TelescopePreviewTitle 	guibg=NvimLightBlue 	guifg=black
+-- 		highlight TelescopeResultsTitle 	guibg=NvimLightMagenta 	guifg=black
 -- 	]])
 -- end
 -- complementary_highlights()
--- vim.cmd.colorscheme("gruber-darker")
--- end

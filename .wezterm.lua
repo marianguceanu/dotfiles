@@ -10,7 +10,8 @@ else
 	config.window_decorations = "NONE"
 end
 
-config.colors = {
+config.color_scheme = "Gruber (base16)"
+--[[ config.colors = {
 	background = "#14161b",
 	tab_bar = {
 		background = "#34363b",
@@ -29,7 +30,7 @@ config.colors = {
 			fg_color = "#808080",
 		},
 	},
-}
+} ]]
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
