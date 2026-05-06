@@ -12,6 +12,23 @@ end
 
 config.colors = {
 	background = "#14161b",
+	tab_bar = {
+		background = "#34363b",
+		active_tab = {
+			bg_color = "#24262b",
+			fg_color = "white",
+			intensity = "Bold",
+			italic = true,
+		},
+		inactive_tab = {
+			bg_color = "#34363b",
+			fg_color = "white",
+		},
+		new_tab = {
+			bg_color = "#34363b",
+			fg_color = "#808080",
+		},
+	},
 }
 
 -- Font and enabling the ligatures
