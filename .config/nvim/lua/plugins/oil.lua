@@ -1,4 +1,1 @@
-return {
-	"stevearc/oil.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-}
+return { "stevearc/oil.nvim" }

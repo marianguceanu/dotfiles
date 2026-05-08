@@ -1,6 +1,6 @@
 require("nvim-treesitter").setup({
-	ensure_installed = { "all" }, -- or "all"
-	auto_install = true, -- installs parser when you open a file with no parser
+	ensure_installed = { "all" },
+	auto_install = true,
 })
 
 vim.api.nvim_create_autocmd("FileType", {

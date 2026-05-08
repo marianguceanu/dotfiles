@@ -20,10 +20,45 @@ local function colorscheme()
 	vim.cmd.colorscheme("gruber-darker")
 	vim.o.winborder = "solid"
 	vim.o.termguicolors = true
-	-- For seeing colors of hexcodes in editor
-	require("colorizer").setup()
 end
 colorscheme()
+
+local function pattern_highlight()
+	local hipatterns = require("mini.hipatterns")
+	hipatterns.setup({
+		highlighters = {
+			fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+			hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+			todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+			note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+			hex_color = hipatterns.gen_highlighter.hex_color(),
+		},
+	})
+end
+pattern_highlight()
+
+local function extra_ui()
+	-- Prettify some UI components
+	require("snacks").setup({
+		explorer = { enabled = true },
+		words = { enabled = false },
+		statuscolumn = { enabled = true },
+		scroll = { enabled = false },
+		picker = { enabled = false },
+		bigfile = { enabled = true },
+		dashboard = { enabled = true },
+		indent = { enabled = true },
+		input = { enabled = true },
+		notifier = { enabled = true, style = "fancy" },
+		quickfile = { enabled = true },
+		scope = { enabled = true },
+	})
+
+	-- Pretty icons
+	require("mini.icons").setup()
+end
+extra_ui()
 
 -- Complete the solid border look
 local function complementary_highlights()

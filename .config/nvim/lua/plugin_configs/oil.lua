@@ -68,7 +68,6 @@ require("oil").setup({
 		},
 		update_on_cursor_moved = true,
 	},
-	-- Configuration for the floating progress window
 	progress = {
 		max_width = 0.9,
 		min_width = { 40, 0.4 },
@@ -82,11 +81,9 @@ require("oil").setup({
 			winblend = 0,
 		},
 	},
-	-- Configuration for the floating SSH window
 	ssh = {
 		border = "solid",
 	},
-	-- Configuration for the floating keymaps help window
 	keymaps_help = {
 		border = "solid",
 	},

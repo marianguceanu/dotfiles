@@ -1,5 +1,4 @@
 -- Reflects git changes in the status column
-
 require("gitsigns").setup({
 	signs = {
 		add = { text = "+" },

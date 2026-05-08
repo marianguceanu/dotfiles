@@ -3,36 +3,31 @@
 -- Tag closing, most useful in HTML
 require("nvim-ts-autotag").setup({
 	opts = {
-		enable_close = true, -- Auto close tags
-		enable_rename = true, -- Auto rename pairs of tags
+		enable_close = true,
+		enable_rename = true,
 	},
 })
 
 -- Pairs
 require("nvim-autopairs").setup({})
 
--- Commenting shortcuts
-require("Comment").setup({})
+-- Comment shortcut on 'gc' bind
+require("mini.comment").setup()
 
--- Prettify some UI components
-require("snacks").setup(
-	---@diagnostic disable-next-line: undefined-doc-name
-	---@type snacks.Config
-	{
-		explorer = { enabled = true },
-		words = { enabled = false },
-		statuscolumn = { enabled = true },
-		scroll = { enabled = false },
-		picker = { enabled = false },
-		bigfile = { enabled = true },
-		dashboard = { enabled = true },
-		indent = { enabled = true },
-		input = { enabled = true },
-		notifier = { enabled = true, style = "fancy" },
-		quickfile = { enabled = true },
-		scope = { enabled = true },
-	}
-)
+-- Formatting on save
+require("conform").setup({
+	formatters_by_ft = {
+		javascript = { "biome" },
+		javascriptreact = { "biome" },
+		typescript = { "biome" },
+		typescriptreact = { "biome" },
+		lua = { "stylua" },
+		yaml = {},
+	},
 
--- Highlight TODO, FIXME, BUG etc...
-require("todo-comments").setup({})
+	format_on_save = {
+		lsp_fallback = false,
+		async = false,
+		timeout_ms = 2000,
+	},
+})

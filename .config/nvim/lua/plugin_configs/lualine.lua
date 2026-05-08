@@ -1,4 +1,4 @@
--- Nice line showing above the CMD prompt below
+-- Nice line showing on bottom of the screen
 local lualine = require("lualine")
 
 local mode_format = {
