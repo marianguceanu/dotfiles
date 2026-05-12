@@ -1,5 +1,3 @@
--- stylua: ignore
----@diagnostic disable-next-line: unused-function
 function Transparency()
 	vim.cmd([[
 		highlight Normal 	guibg=none ctermbg=none
