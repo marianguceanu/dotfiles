@@ -6,4 +6,5 @@ function Line()
 	vim.cmd([[set nu]])
 	vim.cmd([[set relativenumber]])
 	vim.cmd([[set scrolloff=50]])
+	vim.cmd([[set nowrap]])
 end

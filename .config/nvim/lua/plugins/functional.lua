@@ -16,7 +16,6 @@ return {
 	{
 		"saghen/blink.cmp",
 		dependencies = { "rafamadriz/friendly-snippets" },
-
 		version = "1.*",
 		opts_extend = { "sources.default" },
 	},
@@ -27,7 +26,8 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 	},
 
-	-- Auto pairing / tag
+	-- Extras
+	{ "nvim-mini/mini.comment" },
 	{ "windwp/nvim-autopairs" },
 	{ "windwp/nvim-ts-autotag" },
 
@@ -38,7 +38,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-			"MunifTanjim/nui.nvim",
 		},
 	},
 

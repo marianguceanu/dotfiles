@@ -14,3 +14,18 @@ function Complementary_Highlights()
 		highlight TelescopeResultsTitle 	guibg=#73c936 guifg=black
 	]])
 end
+
+-- local function complementary_highlights()
+-- 	vim.cmd([[
+-- 		highlight FloatBorder			guibg=#24262b 		guifg=#24262b
+-- 		highlight NormalFloat			guibg=#24262b
+--
+-- 		highlight SnacksInputBorder 		guibg=#34363b 		guifg=#34363b
+-- 		highlight SnacksInputTitle		guibg=NvimLightGreen 	guifg=black
+--
+-- 		highlight TelescopeBorder		guibg=#34363b 		guifg=#34363b
+-- 		highlight TelescopePromptTitle  	guibg=NvimLightGreen 	guifg=black
+-- 		highlight TelescopePreviewTitle 	guibg=NvimLightBlue 	guifg=black
+-- 		highlight TelescopeResultsTitle 	guibg=NvimLightMagenta 	guifg=black
+-- 	]])
+-- end

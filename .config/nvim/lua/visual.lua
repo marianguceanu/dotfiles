@@ -3,15 +3,13 @@ require("configs.visual.plugins_setup.colorscheme")
 require("configs.visual.plugins_setup.lualine")
 require("configs.visual.plugins_setup.oil")
 require("configs.visual.plugins_setup.snacksc")
-require("configs.visual.plugins_setup.icons")
 
 local function plugins()
-	Colorscheme()
+	Colorscheme("gruber-darker")
 	Gitsigns()
 	Lualine()
 	Oil()
 	Snacksc()
-	Icons()
 end
 plugins()
 

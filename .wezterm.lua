@@ -10,6 +10,7 @@ else
 	config.window_decorations = "NONE"
 end
 
+-- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Gruber (base16)"
 --[[ config.colors = {
 	background = "#14161b",
