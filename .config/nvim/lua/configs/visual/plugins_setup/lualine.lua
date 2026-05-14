@@ -29,10 +29,10 @@ function Lualine()
 		options = {
 			icons_enabled = true,
 			theme = "auto",
-			--[[ theme = {
-			normal = { c = { fg = "white", bg = "#34363b" } },
-			inactive = { c = { fg = "white", bg = "#34363b" } },
-		}, ]]
+			-- theme = {
+			-- 	normal = { c = { fg = "white", bg = "#34363b" } },
+			-- 	inactive = { c = { fg = "white", bg = "#34363b" } },
+			-- },
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
 			always_divide_middle = true,
@@ -71,8 +71,8 @@ function Lualine()
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = {
+			-- mode component
 			{
-				-- mode component
 				function()
 					return mode_format[vim.fn.mode()]
 				end,
@@ -89,11 +89,11 @@ function Lualine()
 				symbols = { added = " ", modified = "󰜥 ", removed = " " },
 				color = { gui = "bold" },
 				-- More contrasty
-				--[[ diff_color = {
-				added = { fg = "#00FF00" },
-				removed = { fg = "#FF0000" },
-				modified = { fg = "#FFFF00" },
-			}, ]]
+				-- diff_color = {
+				-- 	added = { fg = "#00FF00" },
+				-- 	removed = { fg = "#FF0000" },
+				-- 	modified = { fg = "#FFFF00" },
+				-- },
 			},
 			{
 				"diagnostics",

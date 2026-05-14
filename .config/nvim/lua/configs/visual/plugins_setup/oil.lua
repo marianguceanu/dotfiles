@@ -22,8 +22,6 @@ function Oil()
 			concealcursor = "nvic",
 		},
 		delete_to_trash = true,
-		skip_confirm_for_simple_edits = false,
-		prompt_save_on_select_new_entry = true,
 		cleanup_delay_ms = 2000,
 		lsp_file_methods = {
 			enabled = true,
@@ -47,46 +45,10 @@ function Oil()
 				{ "name", "asc" },
 			},
 		},
-		float = {
-			padding = 2,
-			max_width = 0,
-			max_height = 0,
-			border = "solid",
-			win_options = {
-				winblend = 0,
-			},
-		},
-		preview = {
-			max_width = 0.9,
-			min_width = { 40, 0.4 },
-			width = nil,
-			max_height = 0.9,
-			min_height = { 5, 0.1 },
-			height = nil,
-			border = "solid",
-			win_options = {
-				winblend = 0,
-			},
-			update_on_cursor_moved = true,
-		},
-		progress = {
-			max_width = 0.9,
-			min_width = { 40, 0.4 },
-			width = nil,
-			max_height = { 10, 0.9 },
-			min_height = { 5, 0.1 },
-			height = nil,
-			border = "solid",
-			minimized_border = "none",
-			win_options = {
-				winblend = 0,
-			},
-		},
-		ssh = {
-			border = "solid",
-		},
-		keymaps_help = {
-			border = "solid",
-		},
+		float = { border = "solid" },
+		preview = { border = "solid" },
+		progress = { border = "solid" },
+		ssh = { border = "solid" },
+		keymaps_help = { border = "solid" },
 	})
 end

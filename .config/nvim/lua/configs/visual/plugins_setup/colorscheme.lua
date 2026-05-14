@@ -2,7 +2,7 @@ function Colorscheme(colorscheme)
 	if colorscheme == "gruber-darker" then
 		require("gruber-darker").setup({
 			bold = true,
-			italic = { comments = true, folds = true },
+			italic = { comments = true, folds = true, strings = false },
 			undercurl = true,
 			underline = true,
 		})
