@@ -1,7 +1,7 @@
 return {
 	-- Colorschemes
 	{ "blazkowolf/gruber-darker.nvim" },
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "rose-pine/neovim", name = "rose-pine" },
 	-- Git signs integration, very much vs code like
 	{ "lewis6991/gitsigns.nvim" },
 	-- Nice statusline

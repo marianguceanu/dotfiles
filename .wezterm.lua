@@ -10,28 +10,8 @@ else
 	config.window_decorations = "NONE"
 end
 
--- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Gruber (base16)"
---[[ config.colors = {
-	background = "#14161b",
-	tab_bar = {
-		background = "#34363b",
-		active_tab = {
-			bg_color = "#24262b",
-			fg_color = "white",
-			intensity = "Bold",
-			italic = true,
-		},
-		inactive_tab = {
-			bg_color = "#34363b",
-			fg_color = "white",
-		},
-		new_tab = {
-			bg_color = "#34363b",
-			fg_color = "#808080",
-		},
-	},
-} ]]
+-- config.color_scheme = "rose-pine"
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
@@ -73,3 +53,24 @@ for i = 1, 8 do
 end
 
 return config
+-- Neovim default colorscheme configuration
+--[[ config.colors = {
+	background = "#14161b",
+	tab_bar = {
+		background = "#34363b",
+		active_tab = {
+			bg_color = "#24262b",
+			fg_color = "white",
+			intensity = "Bold",
+			italic = true,
+		},
+		inactive_tab = {
+			bg_color = "#34363b",
+			fg_color = "white",
+		},
+		new_tab = {
+			bg_color = "#34363b",
+			fg_color = "#808080",
+		},
+	},
+} ]]

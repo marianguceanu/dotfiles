@@ -22,7 +22,7 @@ require("configs.visual.extras.line")
 
 local function extras()
 	Pattern_Highlight()
-	Complementary_Highlights()
+	Complementary_Highlights("gruber-darker")
 	Code_Folding()
 	Diagnostics()
 	Search_And_Yank()
