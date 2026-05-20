@@ -2,6 +2,7 @@
 function File_Interaction()
 	vim.keymap.set("n", "<leader>gb", ":Gitsign toggle_current_line_blame<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "<S-e>", ":Oil<CR>", { noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>mdt", ":Markview splitToggle<CR>", { noremap = true, silent = true })
 
 	vim.keymap.set("n", "<leader>cfp", function()
 		local path = vim.fn.expand("%:.") -- relative to cwd
