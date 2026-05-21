@@ -11,39 +11,25 @@ else
 end
 
 local function colorscheme(colo)
-	local colors = {
-		bg = "#181818",
-		active_bg = "#484848",
-	}
+	local colors 	= { bg = "#181818", active_bg = "#484848" }
 	config.color_scheme = "Gruber (base16)"
 
 	if colo == "rose-pine" then
-		colors.bg = "#191724"
-		colors.active_bg = "#494754"
+		colors = { bg = "#191724", active_bg = "#494754"}
 		config.color_scheme = "rose-pine"
 	end
 
 	if colo == "nvim-default" then
-		colors.bg = "#14161b"
-		colors.active_bg = "#44464b"
+		colors = { bg = "#14161b", active_bg = "#44464b"}
 	end
 
 	config.colors = {
 		background = colors.bg,
 		tab_bar = {
-			background = colors.bg,
-			active_tab = {
-				bg_color = colors.active_bg,
-				fg_color = "white",
-			},
-			inactive_tab = {
-				bg_color = colors.bg,
-				fg_color = "#808080",
-			},
-			new_tab = {
-				bg_color = colors.bg,
-				fg_color = "#808080",
-			},
+			background 	= colors.bg,
+			active_tab 	= { bg_color = colors.active_bg, 	fg_color = "white" },
+			inactive_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
+			new_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
 		},
 	}
 end
@@ -90,24 +76,3 @@ for i = 1, 8 do
 end
 
 return config
--- Neovim default colorscheme configuration
---[[ config.colors = {
-	background = "#14161b",
-	tab_bar = {
-		background = "#34363b",
-		active_tab = {
-			bg_color = "#24262b",
-			fg_color = "white",
-			intensity = "Bold",
-			italic = true,
-		},
-		inactive_tab = {
-			bg_color = "#34363b",
-			fg_color = "white",
-		},
-		new_tab = {
-			bg_color = "#34363b",
-			fg_color = "#808080",
-		},
-	},
-} ]]

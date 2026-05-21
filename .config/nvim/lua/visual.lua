@@ -4,9 +4,10 @@ require("configs.visual.plugins_setup.lualine")
 require("configs.visual.plugins_setup.oil")
 require("configs.visual.plugins_setup.snacksc")
 
+local colorscheme = "rose-pine"
+
 local function plugins()
-	-- Colorscheme("gruber-darker")
-	Colorscheme("rose-pine")
+	Colorscheme(colorscheme)
 	Gitsigns()
 	Lualine()
 	Oil()
@@ -23,8 +24,7 @@ require("configs.visual.extras.line")
 
 local function extras()
 	Pattern_Highlight()
-	-- Complementary_Highlights("gruber-darker")
-	Complementary_Highlights("rose-pine")
+	Complementary_Highlights(colorscheme)
 	Code_Folding()
 	Diagnostics()
 	Search_And_Yank()
