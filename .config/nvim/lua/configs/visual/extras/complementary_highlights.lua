@@ -2,17 +2,33 @@
 function Complementary_Highlights(colo)
 	if colo == "gruber-darker" then
 		vim.cmd([[
-		highlight FloatBorder			guibg=#282828 guifg=#282828
+		highlight FloatBorder			guibg=#282828 		guifg=#282828
 		highlight NormalFloat			guibg=#282828
 		" highlight Comment 			guifg=#888888
 
-		highlight SnacksInputBorder 		guibg=#282828 guifg=#282828
-		highlight SnacksInputTitle		guibg=#282828 guifg=#73c936 gui=bold
+		highlight SnacksInputBorder 		guibg=#282828 		guifg=#282828
+		highlight SnacksInputTitle		guibg=#282828 		guifg=#73c936 gui=bold
 
-		highlight TelescopeBorder		guibg=#282828 guifg=#282828
-		highlight TelescopePromptTitle  	guibg=#ffdd33 guifg=black
-		highlight TelescopePreviewTitle 	guibg=#95a99f guifg=black
-		highlight TelescopeResultsTitle 	guibg=#73c936 guifg=black
+		highlight TelescopeBorder		guibg=#282828 		guifg=#282828
+		highlight TelescopePromptTitle  	guibg=#ffdd33 		guifg=black
+		highlight TelescopePreviewTitle 	guibg=#95a99f 		guifg=black
+		highlight TelescopeResultsTitle 	guibg=#73c936 		guifg=black
+	]])
+	end
+
+	if colo == "rose-pine" then
+		vim.cmd([[
+		highlight FloatBorder			guibg=#292734 		guifg=#292734
+		highlight NormalFloat			guibg=#292734
+		" highlight Comment 			guifg=#888888
+
+		highlight SnacksInputBorder 		guibg=#292734		guifg=#292734
+		highlight SnacksInputTitle		guibg=#292734		guifg=#31748f gui=bold
+
+		highlight TelescopeBorder		guibg=#292734		guifg=#292734
+		highlight TelescopePromptTitle  	guibg=#f6c177 		guifg=black
+		highlight TelescopePreviewTitle 	guibg=#c4a7e7 		guifg=black
+		highlight TelescopeResultsTitle 	guibg=#31748f		guifg=black
 	]])
 	end
 

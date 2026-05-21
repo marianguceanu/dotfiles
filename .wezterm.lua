@@ -10,8 +10,25 @@ else
 	config.window_decorations = "NONE"
 end
 
-config.color_scheme = "Gruber (base16)"
--- config.color_scheme = "rose-pine"
+-- config.color_scheme = "Gruber (base16)"
+config.color_scheme = "rose-pine"
+config.colors = {
+	tab_bar = {
+		background = "#191724",
+		active_tab = {
+			bg_color = "#46435a",
+			fg_color = "white",
+		},
+		inactive_tab = {
+			bg_color = "#191724",
+			fg_color = "#808080",
+		},
+		new_tab = {
+			bg_color = "#191724",
+			fg_color = "#808080",
+		},
+	},
+}
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })

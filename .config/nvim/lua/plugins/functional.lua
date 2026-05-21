@@ -48,5 +48,6 @@ return {
 			{ "nvim-telescope/telescope.nvim" },
 		},
 		event = "LspAttach",
+		lazy = true,
 	},
 }

@@ -8,6 +8,7 @@ function Colorscheme(colorscheme)
 		})
 	end
 
+
 	if colorscheme == "rose-pine" then
 		require("rose-pine").setup({
 			variant = "auto",
