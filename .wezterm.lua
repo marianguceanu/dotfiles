@@ -10,25 +10,45 @@ else
 	config.window_decorations = "NONE"
 end
 
--- config.color_scheme = "Gruber (base16)"
-config.color_scheme = "rose-pine"
-config.colors = {
-	tab_bar = {
-		background = "#191724",
-		active_tab = {
-			bg_color = "#46435a",
-			fg_color = "white",
+local function colorscheme(colo)
+	local colors = {
+		bg = "#181818",
+		active_bg = "#484848",
+	}
+	config.color_scheme = "Gruber (base16)"
+
+	if colo == "rose-pine" then
+		colors.bg = "#191724"
+		colors.active_bg = "#494754"
+		config.color_scheme = "rose-pine"
+	end
+
+	if colo == "nvim-default" then
+		colors.bg = "#14161b"
+		colors.active_bg = "#44464b"
+	end
+
+	config.colors = {
+		background = colors.bg,
+		tab_bar = {
+			background = colors.bg,
+			active_tab = {
+				bg_color = colors.active_bg,
+				fg_color = "white",
+			},
+			inactive_tab = {
+				bg_color = colors.bg,
+				fg_color = "#808080",
+			},
+			new_tab = {
+				bg_color = colors.bg,
+				fg_color = "#808080",
+			},
 		},
-		inactive_tab = {
-			bg_color = "#191724",
-			fg_color = "#808080",
-		},
-		new_tab = {
-			bg_color = "#191724",
-			fg_color = "#808080",
-		},
-	},
-}
+	}
+end
+
+colorscheme("rose-pine")
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
