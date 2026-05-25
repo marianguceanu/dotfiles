@@ -1,49 +1,28 @@
 -- Complete the solid border look
 function Complementary_Highlights(colo)
+	local colors = { bg_float = "#24262B", bg_float_brighter = "#34363B", prompt = "NvimLightGreen", preview = "NvimLightBlue", title = "NvimLightMagenta" }
+
 	if colo == "gruber-darker" then
-		vim.cmd([[
-		highlight FloatBorder			guibg=#282828 		guifg=#282828
-		highlight NormalFloat			guibg=#282828
-		" highlight Comment 			guifg=#888888
-
-		highlight SnacksInputBorder 		guibg=#282828 		guifg=#282828
-		highlight SnacksInputTitle		guibg=#282828 		guifg=#73c936 gui=bold
-
-		highlight TelescopeBorder		guibg=#282828 		guifg=#282828
-		highlight TelescopePromptTitle  	guibg=#ffdd33 		guifg=black
-		highlight TelescopePreviewTitle 	guibg=#95a99f 		guifg=black
-		highlight TelescopeResultsTitle 	guibg=#73c936 		guifg=black
-	]])
+		colors = { bg_float = "#282828", bg_float_brighter="#383838", title="#73C936", prompt = "#FFDD33", preview = "#95A99F"}
 	end
 
 	if colo == "rose-pine" then
-		vim.cmd([[
-		highlight FloatBorder			guibg=#292734 		guifg=#292734
-		highlight NormalFloat			guibg=#292734
-		" highlight Comment 			guifg=#888888
-
-		highlight SnacksInputBorder 		guibg=#292734		guifg=#292734
-		highlight SnacksInputTitle		guibg=#292734		guifg=#31748f gui=bold
-
-		highlight TelescopeBorder		guibg=#292734		guifg=#292734
-		highlight TelescopePromptTitle  	guibg=#f6c177 		guifg=black
-		highlight TelescopePreviewTitle 	guibg=#c4a7e7 		guifg=black
-		highlight TelescopeResultsTitle 	guibg=#31748f		guifg=black
-	]])
+		colors = { bg_float = "#292734", bg_float_brighter="#292734", title="#31748F", prompt = "#F6C177", preview = "#C4A7E7"}
 	end
 
-	if colo == "default" then
-		vim.cmd([[
-		highlight FloatBorder			guibg=#24262b 		guifg=#24262b
-		highlight NormalFloat			guibg=#24262b
-
-		highlight SnacksInputBorder 		guibg=#34363b 		guifg=#34363b
-		highlight SnacksInputTitle		guibg=NvimLightGreen 	guifg=black
-
-		highlight TelescopeBorder		guibg=#34363b 		guifg=#34363b
-		highlight TelescopePromptTitle  	guibg=NvimLightGreen 	guifg=black
-		highlight TelescopePreviewTitle 	guibg=NvimLightBlue 	guifg=black
-		highlight TelescopeResultsTitle 	guibg=NvimLightMagenta 	guifg=black
-	]])
+	if colo == "zenbones" then
+		colors = { bg_float = "#2C2927", bg_float_brighter="#2C2927", title="#B279A7", prompt = "#D68C67", preview = "#65B8C1"}
 	end
+
+	vim.api.nvim_set_hl(0, "FloatBorder", 		{ bg = colors.bg_float, 		fg = colors.bg_float })
+	vim.api.nvim_set_hl(0, "NormalFloat", 		{ bg = colors.bg_float })
+
+	vim.api.nvim_set_hl(0, "SnacksInputBorder", 	{ bg = colors.bg_float_brighter, 	fg = colors.bg_float_brighter })
+	vim.api.nvim_set_hl(0, "SnacksInputTitle", 	{ bg = colors.title, 			fg = "black"})
+
+	vim.api.nvim_set_hl(0, "TelescopeBorder", 	{ bg=colors.bg_float_brighter, 		fg= colors.bg_float_brighter })
+	vim.api.nvim_set_hl(0, "TelescopePromptTitle", 	{ bg = colors.prompt, 			fg = "black" })
+	vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = colors.preview, 			fg = "black" })
+	vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = colors.title, 			fg = "black" })
+
 end

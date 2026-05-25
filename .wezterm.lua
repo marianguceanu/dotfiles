@@ -12,11 +12,19 @@ end
 
 local function colorscheme(colo)
 	local colors 	= { bg = "#181818", active_bg = "#484848" }
-	config.color_scheme = "Gruber (base16)"
+	if colo == "gruber-darker" then
+		config.color_scheme = "Gruber (base16)"
+		return
+	end
 
 	if colo == "rose-pine" then
 		colors = { bg = "#191724", active_bg = "#494754"}
 		config.color_scheme = "rose-pine"
+	end
+
+	if colo == "zenbones_dark" then
+		config.color_scheme = "zenbones_dark"
+		return
 	end
 
 	if colo == "nvim-default" then
@@ -34,7 +42,7 @@ local function colorscheme(colo)
 	}
 end
 
-colorscheme("rose-pine")
+colorscheme("zenbones_dark")
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
