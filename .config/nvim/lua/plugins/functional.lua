@@ -50,4 +50,10 @@ return {
 		event = "LspAttach",
 		lazy = true,
 	},
+	-- Language specific plugins
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^9",
+		lazy = false,
+	},
 }

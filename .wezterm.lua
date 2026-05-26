@@ -42,7 +42,7 @@ local function colorscheme(colo)
 	}
 end
 
-colorscheme("zenbones_dark")
+colorscheme("gruber-darker")
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })

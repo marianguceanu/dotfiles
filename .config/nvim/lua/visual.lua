@@ -4,12 +4,12 @@ require("configs.visual.plugins_setup.lualine")
 require("configs.visual.plugins_setup.oil")
 require("configs.visual.plugins_setup.snacksc")
 
-local colorscheme = "zenbones"
+local colorscheme = "gruber-darker"
 
 local function plugins()
 	Colorscheme(colorscheme)
 	Gitsigns()
-	-- Lualine()
+	Lualine()
 	Oil()
 	Snacksc()
 end
