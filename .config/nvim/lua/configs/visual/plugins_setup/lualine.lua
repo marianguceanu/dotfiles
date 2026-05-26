@@ -3,26 +3,26 @@ function Lualine()
 	local lualine = require("lualine")
 
 	local mode_format = {
-		n = "NOR",
-		i = "INS",
-		v = "VIS",
-		[""] = "VIS BLOCK",
-		V = "VIS LINE",
-		c = "CMD",
-		no = vim.fn.mode(),
-		s = vim.fn.mode(),
-		S = vim.fn.mode(),
-		[""] = vim.fn.mode(),
-		ic = vim.fn.mode(),
-		R = vim.fn.mode(),
-		Rv = vim.fn.mode(),
-		cv = vim.fn.mode(),
-		ce = vim.fn.mode(),
-		r = vim.fn.mode(),
-		rm = vim.fn.mode(),
-		["r?"] = vim.fn.mode(),
-		["!"] = vim.fn.mode(),
-		t = vim.fn.mode(),
+		n 	= "NOR",
+		i 	= "INS",
+		v 	= "VIS",
+		[""] 	= "VIS BLOCK",
+		V 	= "VIS LINE",
+		c 	= "CMD",
+		no 	= vim.fn.mode(),
+		s 	= vim.fn.mode(),
+		S 	= vim.fn.mode(),
+		[""] 	= vim.fn.mode(),
+		ic 	= vim.fn.mode(),
+		R 	= vim.fn.mode(),
+		Rv 	= vim.fn.mode(),
+		cv 	= vim.fn.mode(),
+		ce 	= vim.fn.mode(),
+		r 	= vim.fn.mode(),
+		rm 	= vim.fn.mode(),
+		["r?"] 	= vim.fn.mode(),
+		["!"] 	= vim.fn.mode(),
+		t 	= vim.fn.mode(),
 	}
 
 	local config = {
@@ -59,12 +59,8 @@ function Lualine()
 		},
 		sections = {},
 		inactive_sections = {
-			lualine_a = {},
-			lualine_b = {},
-			lualine_c = { "filename" },
-			lualine_x = { "location" },
-			lualine_y = {},
-			lualine_z = {},
+			lualine_a = {		 }, lualine_b = {}, lualine_c = { "filename" },
+			lualine_x = { "location" }, lualine_y = {}, lualine_z = {	     },
 		},
 	}
 	local config_sections = {
@@ -73,42 +69,37 @@ function Lualine()
 		lualine_c = {
 			-- mode component
 			{
-				function()
-					return mode_format[vim.fn.mode()]
-				end,
+				function() return mode_format[vim.fn.mode()] end,
 				color = { gui = "bold" },
 				padding = { left = 2, right = 2 },
 			},
+
+			-- Branch, alternative icon = " ",
+			{ function() return "<"  end , padding = { left = 0, right = 0 }, color = { gui = "bold", fg = "pink" }},
 			{
 				"branch",
-				icon = " ",
+				icon = "",
 				color = { gui = "bold", fg = "pink" },
+				padding = { left = 0, right = 0 },
 			},
+			{ function() return ">"  end , padding = { left = 1, right = 0 }, color = { gui = "bold", fg = "pink" } },
+
+			-- More contrasty
+			-- diff_color = { added = { fg = "#00FF00" }, removed = { fg = "#FF0000" }, modified = { fg = "#FFFF00" } },
 			{
 				"diff",
 				symbols = { added = " ", modified = "󰜥 ", removed = " " },
 				color = { gui = "bold" },
-				-- More contrasty
-				-- diff_color = {
-				-- 	added = { fg = "#00FF00" },
-				-- 	removed = { fg = "#FF0000" },
-				-- 	modified = { fg = "#FFFF00" },
-				-- },
 			},
-			{
-				"diagnostics",
-				color = { gui = "bold" },
-			},
+
+			{ "diagnostics", color = { gui = "bold" } },
+
+			{ "filename", path = 1 },
 		},
 		lualine_x = {
-			{
-				"filename",
-				path = 1,
-			},
 			"progress",
-			"location",
-			"fileformat",
-			"encoding",
+
+			{ "location", padding = { left = 2, right = 1 } },
 		},
 		lualine_y = {},
 		lualine_z = {},

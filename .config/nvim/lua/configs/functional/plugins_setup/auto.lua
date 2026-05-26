@@ -21,7 +21,7 @@ function Auto()
 			javascriptreact = { "biome" },
 			typescript = { "biome" },
 			typescriptreact = { "biome" },
-			lua = {	"stylua" },
+			lua = {},
 			yaml = {},
 			rust = { "rustfmt" },
 		},
