@@ -1,5 +1,8 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local helpers = require 'helpers'
+
+
 
 -- Setting the default program to launch if on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
@@ -10,39 +13,8 @@ else
 	config.window_decorations = "NONE"
 end
 
-local function colorscheme(colo)
-	local colors 	= { bg = "#181818", active_bg = "#484848" }
-	if colo == "gruber-darker" then
-		config.color_scheme = "Gruber (base16)"
-		return
-	end
 
-	if colo == "rose-pine" then
-		colors = { bg = "#191724", active_bg = "#494754"}
-		config.color_scheme = "rose-pine"
-	end
-
-	if colo == "zenbones_dark" then
-		config.color_scheme = "zenbones_dark"
-		return
-	end
-
-	if colo == "nvim-default" then
-		colors = { bg = "#14161b", active_bg = "#44464b"}
-	end
-
-	config.colors = {
-		background = colors.bg,
-		tab_bar = {
-			background 	= colors.bg,
-			active_tab 	= { bg_color = colors.active_bg, 	fg_color = "white" },
-			inactive_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
-			new_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
-		},
-	}
-end
-
-colorscheme("gruber-darker")
+helpers.colorscheme("gruber-darker", config)
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
@@ -82,5 +54,7 @@ for i = 1, 8 do
 		action = wezterm.action.MoveTab(i - 1),
 	})
 end
+
+
 
 return config
