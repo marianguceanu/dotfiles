@@ -4,7 +4,9 @@ require("configs.visual.plugins_setup.lualine")
 require("configs.visual.plugins_setup.oil")
 require("configs.visual.plugins_setup.snacksc")
 
-local colorscheme = "gruber-darker"
+-- local colorscheme = "gruber-darker"
+-- local colorscheme = "rose-pine"
+local colorscheme = "zenwritten"
 
 local function plugins()
 	Colorscheme(colorscheme)

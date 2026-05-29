@@ -12,10 +12,16 @@ function Complementary_Highlights(colo)
 
 	if colo == "zenbones" then
 		colors = { bg_float = "#2C2927", bg_float_brighter="#2C2927", title="#B279A7", prompt = "#D68C67", preview = "#65B8C1"}
+		vim.cmd([[hi String gui=none]])
 	end
 
-	vim.api.nvim_set_hl(0, "FloatBorder", 		{ bg = colors.bg_float, 		fg = colors.bg_float })
-	vim.api.nvim_set_hl(0, "NormalFloat", 		{ bg = colors.bg_float })
+	if colo == "zenwritten" then
+		colors = { bg_float = "#191919", bg_float_brighter="#393939", title="#DE6E7C", prompt = "#819B69", preview = "#B77E64"}
+		vim.cmd([[hi String gui=none]])
+	end
+
+	vim.api.nvim_set_hl(0, "FloatBorder", 		{ bg = colors.bg_float_brighter, 		fg = colors.bg_float_brighter })
+	vim.api.nvim_set_hl(0, "NormalFloat", 		{ bg = colors.bg_float_brighter })
 
 	vim.api.nvim_set_hl(0, "SnacksInputBorder", 	{ bg = colors.bg_float_brighter, 	fg = colors.bg_float_brighter })
 	vim.api.nvim_set_hl(0, "SnacksInputTitle", 	{ bg = colors.title, 			fg = "black"})

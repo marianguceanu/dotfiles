@@ -5,17 +5,15 @@ function module.colorscheme(colo, config)
 
 	if colo == "gruber-darker" then
 		config.color_scheme = "Gruber (base16)"
-		return
 	end
 
 	if colo == "rose-pine" then
 		colors = { bg = "#191724", active_bg = "#494754"}
 		config.color_scheme = "rose-pine"
-		return
 	end
 
-	if colo == "zenbones_dark" then
-		config.color_scheme = "zenbones_dark"
+	if colo == "zenbones_dark" or colo == "zenwritten_dark" then
+		config.color_scheme = colo
 		return
 	end
 
