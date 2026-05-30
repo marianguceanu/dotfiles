@@ -14,7 +14,9 @@ else
 end
 
 
-helpers.colorscheme("zenwritten_dark", config)
+helpers.colorscheme("gruber-darker", config)
+-- helpers.colorscheme("rose-pine", config)
+-- helpers.colorscheme("zenwritten_dark", config)
 
 -- Font and enabling the ligatures
 config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
