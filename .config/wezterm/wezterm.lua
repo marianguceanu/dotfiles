@@ -14,6 +14,7 @@ else
 end
 
 
+-- helpers.colorscheme("nvim-default", config)
 helpers.colorscheme("gruber-darker", config)
 -- helpers.colorscheme("rose-pine", config)
 -- helpers.colorscheme("zenwritten_dark", config)
@@ -57,7 +58,5 @@ for i = 1, 8 do
 		action = wezterm.action.MoveTab(i - 1),
 	})
 end
-
-
 
 return config

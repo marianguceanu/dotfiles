@@ -5,7 +5,11 @@ return {
 	{
 		"zenbones-theme/zenbones.nvim",
 		dependencies = "rktjmp/lush.nvim",
-		priority = 1000,
+	},
+	{
+		-- dir = "C:/Users/Marian/Documents/Code/soat/", -- local path, 
+		"marianguceanu/soat",
+		lazy = false,
 	},
 
 	-- Git signs integration, very much vs code like
