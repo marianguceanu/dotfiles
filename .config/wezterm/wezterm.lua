@@ -15,8 +15,11 @@ end
 
 
 -- helpers.colorscheme("nvim-default", config)
+-- helpers.colorscheme("catppuccin", config)
+-- helpers.colorscheme("Ciapre", config)
 helpers.colorscheme("gruber-darker", config)
 -- helpers.colorscheme("rose-pine", config)
+-- helpers.colorscheme("gruvbox", config)
 -- helpers.colorscheme("zenwritten_dark", config)
 
 -- Font and enabling the ligatures

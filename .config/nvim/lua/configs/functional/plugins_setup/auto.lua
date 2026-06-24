@@ -17,13 +17,14 @@ function Auto()
 	-- Formatting on save
 	require("conform").setup({
 		formatters_by_ft = {
-			javascript = { "biome" },
+			javascript 	= { "biome" },
 			javascriptreact = { "biome" },
-			typescript = { "biome" },
+			typescript 	= { "biome" },
 			typescriptreact = { "biome" },
-			lua = {},
-			yaml = {},
-			rust = { "rustfmt" },
+			json 		= { "fixjson" },
+			lua 		= {},
+			yaml 		= {},
+			rust 		= { "rustfmt" },
 		},
 
 		format_on_save = {

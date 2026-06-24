@@ -2,10 +2,9 @@ return {
 	-- Colorschemes
 	{ "blazkowolf/gruber-darker.nvim", lazy = true },
 	{ "rose-pine/neovim", name = "rose-pine", lazy = true },
-	{
-		"zenbones-theme/zenbones.nvim",
-		dependencies = "rktjmp/lush.nvim",
-	},
+	{ "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
 	{
 		-- dir = "C:/Users/Marian/Documents/Code/soat/", -- local path, 
 		"marianguceanu/soat",
