@@ -23,9 +23,12 @@ helpers.colorscheme("gruber-darker", config)
 -- helpers.colorscheme("zenwritten_dark", config)
 
 -- Font and enabling the ligatures
-config.font = wezterm.font("IosevkaTerm Nerd Font Propo", { weight = "Regular" })
+config.font = wezterm.font {
+	family = "IosevkaTerm Nerd Font Propo",
+	weight = "Regular",
+	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+}
 config.font_size = 18
-config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.warn_about_missing_glyphs = false
 -- config.hide_tab_bar_if_only_one_tab = true
 
