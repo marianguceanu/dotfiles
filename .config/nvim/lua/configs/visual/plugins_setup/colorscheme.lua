@@ -28,6 +28,6 @@ function Colorscheme(colorscheme)
 	end
 
 	vim.cmd.colorscheme(colorscheme)
-	vim.o.winborder = "shadow"
+	vim.o.winborder = "solid"
 	vim.o.termguicolors = true
 end
