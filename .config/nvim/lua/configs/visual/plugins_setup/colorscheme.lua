@@ -21,7 +21,7 @@ function Colorscheme(colorscheme)
 	elseif colorscheme == "gruvbox" then
 		require("gruvbox").setup({
 			italic = { strings = false },
-			contrast = "hard", -- can be "hard", "soft" or empty string
+			contrast = "soft", -- can be "hard", "soft" or empty string
 			transparent_mode = true,
 			bold = false,
 		})

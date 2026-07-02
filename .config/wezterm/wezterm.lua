@@ -24,7 +24,7 @@ helpers.colorscheme("gruber-darker", config)
 
 -- Font and enabling the ligatures
 config.font = wezterm.font {
-	family = "IosevkaTerm Nerd Font Propo",
+	family = "Iosevka Nerd Font Propo",
 	weight = "Regular",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 }

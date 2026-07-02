@@ -71,34 +71,23 @@ function Lualine()
 			{
 				function() return mode_format[vim.fn.mode()] end,
 				color = { gui = "bold" },
-				padding = { left = 2, right = 2 },
+				padding = { left = 2, right = 1 },
 			},
 
 			-- Branch, alternative icon = " ",
-			{ function() return "<"  end , padding = { left = 0, right = 0 }, color = { gui = "bold", fg = "pink" }},
 			{
 				"branch",
 				icon = "",
 				color = { gui = "bold", fg = "pink" },
 				padding = { left = 0, right = 0 },
 			},
-			{ function() return ">"  end , padding = { left = 1, right = 0 }, color = { gui = "bold", fg = "pink" } },
-
-			-- More contrasty
-			-- diff_color = { added = { fg = "#00FF00" }, removed = { fg = "#FF0000" }, modified = { fg = "#FFFF00" } },
-			{
-				"diff",
-				symbols = { added = " ", modified = "󰜥 ", removed = " " },
-				color = { gui = "bold" },
-			},
-
-			{ "diagnostics", color = { gui = "bold" } },
 
 			{ "filename", path = 1 },
 		},
 		lualine_x = {
-			"progress",
-
+			-- More contrasty: diff_color = { added = { fg = "#00FF00" }, removed = { fg = "#FF0000" }, modified = { fg = "#FFFF00" } },
+			{ "diff", color = { gui = "bold" } },
+			{ "diagnostics", color = { gui = "bold" } },
 			{ "location", padding = { left = 2, right = 1 } },
 		},
 		lualine_y = {},
