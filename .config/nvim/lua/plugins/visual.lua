@@ -6,8 +6,8 @@ return {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
 	{
-		-- dir = "C:/Users/Marian/Documents/Code/soat/", -- local path, 
-		"marianguceanu/soat",
+		dir = "~/Documents/Custom/soat/", -- local path, 
+		-- "marianguceanu/soat",
 		lazy = false,
 	},
 

@@ -9,6 +9,8 @@ function module.colorscheme(colo, config)
 	elseif colo == "rose-pine" then
 		colors = { bg = "#191724", active_bg = "#494754", tab_bar_bg = "#12101d" }
 		config.color_scheme = "rose-pine"
+	elseif colo == "soat" then
+		colors = { bg = "#202020", active_bg = "#303030", tab_bar_bg = "#404040" }
 	elseif colo == "nvim-default" then
 		colors = { bg = "#14161b", active_bg = "#34363b", tab_bar_bg = "#0e1015" }
 		config.color_scheme = "NvimDark"

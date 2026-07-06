@@ -24,13 +24,13 @@ local colorschemes = {
 	neobones 	= "neobones",
 	vim 		= "vim",
 }
-local colo = colorschemes.gruvbox
+local colo = colorschemes.soat
 
 
 local function plugins()
 	Colorscheme(colo)
 	Gitsigns()
-	Lualine()
+	-- Lualine()
 	Oil()
 	Snacksc()
 end
