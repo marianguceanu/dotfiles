@@ -1,3 +1,4 @@
+-- TODO: rewrite this into a simple for
 function Transparency()
 	vim.cmd([[
 		highlight Normal 	guibg=none ctermbg=none

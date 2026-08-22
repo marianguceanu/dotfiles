@@ -2,19 +2,9 @@
 function Telescope()
 	require("telescope").setup({
 		defaults = {
-			layout_config = {
-				prompt_position = "top",
-				width = 0.85,
-				height = 0.9,
-			},
+			layout_config = { prompt_position = "top", width = 0.85, height = 0.9 },
 			sorting_strategy = "ascending",
-
-			mappings = {
-				i = {
-					["<C-u>"] = false,
-					["<C-d>"] = false,
-				},
-			},
+			mappings = { i = { ["<C-u>"] = false, ["<C-d>"] = false } },
 		},
 	})
 

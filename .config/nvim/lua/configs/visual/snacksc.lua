@@ -1,7 +1,7 @@
 -- Prettify some UI components
 function Snacksc()
 	require("snacks").setup({
-		explorer = { enabled = true },
+		explorer = { enabled = false },
 		words = { enabled = false },
 		statuscolumn = { enabled = true },
 		scroll = { enabled = false },

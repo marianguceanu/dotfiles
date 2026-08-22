@@ -1,7 +1,5 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local helpers = require 'helpers'
-
 
 
 -- Setting the default program to launch if on windows
@@ -14,16 +12,8 @@ else
 end
 
 
--- helpers.colorscheme("nvim-default", config)
--- helpers.colorscheme("catppuccin", config)
--- helpers.colorscheme("Ciapre", config)
--- helpers.colorscheme("gruber-darker", config)
-helpers.colorscheme("soat", config)
--- helpers.colorscheme("rose-pine", config)
--- helpers.colorscheme("gruvbox", config)
--- helpers.colorscheme("zenwritten_dark", config)
-
--- config.color_scheme = 'Broadcast'
+local appearance = wezterm.gui.get_appearance()
+config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
 
 -- Font and enabling the ligatures
 config.font = wezterm.font {

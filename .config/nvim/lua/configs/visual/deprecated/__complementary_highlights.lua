@@ -1,4 +1,4 @@
-
+-- @deprecated: I no longer use this but it may be useful in the future
 -- Complete the solid border look
 function Complementary_Highlights(colo)
 	local colors = { bg_float = "#24262B", bg_float_brighter = "#34363B", prompt = "NvimLightGreen", preview = "NvimLightBlue", results = "NvimLightMagenta" }

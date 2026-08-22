@@ -1,3 +1,4 @@
+-- @deprecated: This is also not being used anymore. I chose simplicity
 -- Nice line showing on bottom of the screen
 function Lualine()
 	local lualine = require("lualine")

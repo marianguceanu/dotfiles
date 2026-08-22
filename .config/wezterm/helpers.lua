@@ -30,7 +30,7 @@ function module.colorscheme(colo, config)
 		tab_bar = {
 			background 	= colors.tab_bar_bg,
 			active_tab 	= { bg_color = colors.active_bg, 	fg_color = "white" },
-			inactive_tab 	= { bg_color = colors.tab_bar_bg, 		fg_color = "#808080" },
+			inactive_tab 	= { bg_color = colors.tab_bar_bg, 	fg_color = "#808080" },
 			new_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
 		},
 	}
