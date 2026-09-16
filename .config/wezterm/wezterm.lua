@@ -12,12 +12,12 @@ else
 end
 
 
-local appearance = wezterm.gui.get_appearance()
-config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
+-- local appearance = wezterm.gui.get_appearance()
+-- config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
 
 -- Font and enabling the ligatures
 config.font = wezterm.font {
-	family = "Iosevka Nerd Font Propo",
+	family = "IosevkaTerm Nerd Font Propo",
 	weight = "Regular",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 }

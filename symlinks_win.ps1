@@ -4,3 +4,10 @@ New-Item -ItemType SymbolicLink -Path "$env:LOCALAPPDATA\nvim" -Target "$env:USE
 New-Item  -ItemType Directory  -Path "$env:USERPROFILE\.config" -Force | Out-Null
 Remove-Item "$env:USERPROFILE\.config\wezterm" -Recurse -Force -ErrorAction SilentlyContinue
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.config\wezterm" -Target "$env:USERPROFILE\dotfiles\.config\wezterm"
+
+New-Item -ItemType Directory -Path "$env:USERPROFILE\.config" -Force | Out-Null
+
+Remove-Item "$env:USERPROFILE\.config\alacritty" -Recurse -Force -ErrorAction SilentlyContinue
+New-Item -ItemType SymbolicLink `
+    -Path "$env:USERPROFILE\.config\alacritty" `
+    -Target "$env:USERPROFILE\dotfiles\.config\alacritty"

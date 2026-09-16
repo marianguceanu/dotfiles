@@ -1,4 +1,5 @@
-require("lazy_bootstrap")
+require("pm_lazy_bootstrap")
+require("setup_plugins")
 
-require("visual")
-require("functional")
+require("opts_visual")
+require("opts_keymaps")

@@ -8,11 +8,16 @@ vim.keymap.set("n", "<C-H>", "20zh", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", ":Gitsign toggle_current_line_blame<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-e>", ":Oil<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>mdt", ":Markview splitToggle<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>cfp", function()
-	local path = vim.fn.expand("%:.") -- relative to cwd
-	vim.fn.setreg("+", path) -- system clipboard
-	print("Copied: " .. path)
-end, { desc = "Copy relative file path" })
+
+vim.keymap.set("n", "<leader>yafp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Copy full path" })
+
+vim.keymap.set("n", "<leader>yrfp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:."))
+end, { desc = "Copy relative path" })
+
+vim.keymap.set({ "n", "v" }, "<leader>yc", '"+y', { desc = "Yank to clipboard" })
 
 -- LSP interactions
 -- Using telescope for some lsp capabilities because it offers previews

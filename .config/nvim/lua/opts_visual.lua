@@ -1,5 +1,7 @@
-vim.cmd.colorscheme("catppuccin")
--- vim.o.winborder = "solid"
+require("gruvbox").setup({ transparent_mode = true })
+
+vim.cmd("colorscheme gruvbox")
+vim.o.winborder = "rounded"
 vim.o.termguicolors = true
 
 -- Code folding 
@@ -23,7 +25,14 @@ vim.diagnostic.config({
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.o.undofile = true
-vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]])
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 200,
+		})
+	end,
+})
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
@@ -33,7 +42,11 @@ vim.o.colorcolumn = "120"
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.scrolloff = 50
+vim.o.scrolloff = 100
 vim.o.wrap = false
 vim.opt.signcolumn = "yes"
 vim.g.have_nerd_font = true
+
+-- Status line
+vim.opt.laststatus = 3
+vim.opt.statusline = table.concat({ " %f", "%m", "%=", " %y", "  %l:%c " })
