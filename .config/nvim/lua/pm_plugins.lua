@@ -1,6 +1,7 @@
 return {
 	-- Colorscheme
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+	{ "RRethy/base16-nvim" },
 
 	-- Git signs integration, very much vs code like
 	{ "lewis6991/gitsigns.nvim", lazy = true },
@@ -15,8 +16,9 @@ return {
 	{ 'saghen/blink.indent' },
 	-- Extras
 	{ "nvim-mini/mini.comment" },
-	{ "windwp/nvim-autopairs" },
+	{ "windwp/nvim-autopairs"  },
 	{ "windwp/nvim-ts-autotag" },
+	{ "rcarriga/nvim-notify"   },
 
 	-- Completions
 	{
@@ -45,22 +47,10 @@ return {
 	},
 
 	-- LSP 
-	{ "neovim/nvim-lspconfig", lazy = false },
-	{ "mason-org/mason.nvim", opts = {} },
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"lua_ls",
-				"clangd",
-				"ts_ls",
-			},
-			automatic_enable = true,
-		},
-		dependencies = {
-			"mason-org/mason.nvim",
-			"neovim/nvim-lspconfig",
-		},
+		opts = { automatic_enable = true },
+		dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
 	},
 
 	-- Language specific plugins

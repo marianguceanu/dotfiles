@@ -1,6 +1,5 @@
-require("gruvbox").setup({ transparent_mode = true })
-
-vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme base16-black-metal-gorgoroth")
 vim.o.winborder = "rounded"
 vim.o.termguicolors = true
 

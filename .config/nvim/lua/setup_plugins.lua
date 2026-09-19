@@ -17,6 +17,19 @@ require("telescope").setup({
 
 pcall(require("telescope").load_extension, "fzf")
 
+-- require("gruvbox").setup({ transparent_mode = true })
+-- To disable highlights for supported plugin(s), call the `with_config` function **before** setting the colorscheme.
+-- These are the defaults.
+require('base16-colorscheme').with_config({
+    	telescope = true,
+    	indentblankline = true,
+    	notify = true,
+    	ts_rainbow = true,
+    	cmp = true,
+    	illuminate = true,
+    	dapui = true,
+})
+
 -- File manager that works just like the neovim buffer
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -54,10 +67,9 @@ local hipatterns = require("mini.hipatterns")
 hipatterns.setup({
 	highlighters = {
 		fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-		hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-		todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-		note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-
+		hack  = { pattern = "%f[%w]()HACK()%f[%W]" , group = "MiniHipatternsHack"  },
+		todo  = { pattern = "%f[%w]()TODO()%f[%W]" , group = "MiniHipatternsTodo"  },
+		note  = { pattern = "%f[%w]()NOTE()%f[%W]" , group = "MiniHipatternsNote"  },
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
