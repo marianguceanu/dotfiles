@@ -1,5 +1,5 @@
+vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme gruvbox")
-vim.cmd("colorscheme base16-black-metal-gorgoroth")
 vim.o.winborder = "rounded"
 vim.o.termguicolors = true
 
@@ -35,7 +35,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- File lines opts
 vim.o.guicursor = "i:block"
 vim.o.colorcolumn = "120"
 vim.o.cursorline = true

@@ -7,7 +7,8 @@ function module.colorscheme(colo, config)
 	if colo == "gruber-darker" then
 		config.color_scheme = "Gruber (base16)"
 	elseif colo == "rose-pine" then
-		colors = { bg = "#191724", active_bg = "#494754", tab_bar_bg = "#12101d" }
+		-- colors = { bg = "#191724", active_bg = "#494754", tab_bar_bg = "#12101d" }
+		colors = { bg = "#000000", active_bg = "#000000", tab_bar_bg="#000000" }
 		config.color_scheme = "rose-pine"
 	elseif colo == "soat" then
 		colors = { bg = "#202020", active_bg = "#303030", tab_bar_bg = "#404040" }
@@ -20,6 +21,8 @@ function module.colorscheme(colo, config)
 	elseif colo == "catppuccin" then
 		config.color_scheme = "Catppuccin Mocha"
 		return
+	elseif colo == "other" then
+		colors = { bg = "#000000", active_bg = "#000000", tab_bar_bg="#000000" }
 	else
 		config.color_scheme = colo
 		return
@@ -30,8 +33,8 @@ function module.colorscheme(colo, config)
 		tab_bar = {
 			background 	= colors.tab_bar_bg,
 			active_tab 	= { bg_color = colors.active_bg, 	fg_color = "white" },
-			inactive_tab 	= { bg_color = colors.tab_bar_bg, 	fg_color = "#808080" },
-			new_tab 	= { bg_color = colors.bg, 		fg_color = "#808080" },
+			inactive_tab 	= { bg_color = colors.tab_bar_bg, 	fg_color = "#404040" },
+			new_tab 	= { bg_color = colors.bg, 		fg_color = "#404040" },
 		},
 	}
 end

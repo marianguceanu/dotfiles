@@ -17,17 +17,13 @@ require("telescope").setup({
 
 pcall(require("telescope").load_extension, "fzf")
 
--- require("gruvbox").setup({ transparent_mode = true })
--- To disable highlights for supported plugin(s), call the `with_config` function **before** setting the colorscheme.
--- These are the defaults.
-require('base16-colorscheme').with_config({
-    	telescope = true,
-    	indentblankline = true,
-    	notify = true,
-    	ts_rainbow = true,
-    	cmp = true,
-    	illuminate = true,
-    	dapui = true,
+require("gruvbox").setup({ transparent_mode = true })
+require("rose-pine").setup({
+	styles = {
+		bold = false,
+        	italic = false,
+        	transparency = true,
+	}
 })
 
 -- File manager that works just like the neovim buffer

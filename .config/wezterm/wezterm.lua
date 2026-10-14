@@ -12,6 +12,7 @@ else
 end
 
 
+require("helpers").colorscheme("rose-pine", config)
 -- local appearance = wezterm.gui.get_appearance()
 -- config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
 

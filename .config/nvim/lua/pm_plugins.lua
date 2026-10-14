@@ -1,7 +1,7 @@
 return {
 	-- Colorscheme
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
-	{ "RRethy/base16-nvim" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 
 	-- Git signs integration, very much vs code like
 	{ "lewis6991/gitsigns.nvim", lazy = true },
@@ -47,6 +47,8 @@ return {
 	},
 
 	-- LSP 
+	{ "neovim/nvim-lspconfig", lazy = false },
+	{ "mason-org/mason.nvim", opts = {} },
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = { automatic_enable = true },
