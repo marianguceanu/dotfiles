@@ -9,11 +9,11 @@ vim.keymap.set("n", "<leader>gb", ":Gitsign toggle_current_line_blame<CR>", { no
 vim.keymap.set("n", "<S-e>", ":Oil<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>mdt", ":Markview splitToggle<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>yafp", function()
+vim.keymap.set("n", "<leader>cfpa", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p"))
 end, { desc = "Copy full path" })
 
-vim.keymap.set("n", "<leader>yrfp", function()
+vim.keymap.set("n", "<leader>cfpr", function()
 	vim.fn.setreg("+", vim.fn.expand("%:."))
 end, { desc = "Copy relative path" })
 

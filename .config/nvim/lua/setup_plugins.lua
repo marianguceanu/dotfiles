@@ -45,6 +45,10 @@ require("oil").setup({
 			{ "name", "asc" },
 		},
 	},
+	columns = {
+		"icon",
+		-- "permissions", "size",
+	},
 })
 
 
