@@ -18,6 +18,7 @@ require("telescope").setup({
 pcall(require("telescope").load_extension, "fzf")
 
 require("gruvbox").setup({ transparent_mode = true })
+require('onedark').setup({ style = 'deep', transparent = true })
 require("rose-pine").setup({
 	styles = {
 		bold = false,

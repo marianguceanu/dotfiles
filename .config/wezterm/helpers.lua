@@ -7,8 +7,7 @@ function module.colorscheme(colo, config)
 	if colo == "gruber-darker" then
 		config.color_scheme = "Gruber (base16)"
 	elseif colo == "rose-pine" then
-		-- colors = { bg = "#191724", active_bg = "#494754", tab_bar_bg = "#12101d" }
-		colors = { bg = "#000000", active_bg = "#000000", tab_bar_bg="#000000" }
+		colors = { bg = "#191724", active_bg = "#494754", tab_bar_bg = "#12101d" }
 		config.color_scheme = "rose-pine"
 	elseif colo == "soat" then
 		colors = { bg = "#202020", active_bg = "#303030", tab_bar_bg = "#404040" }
@@ -21,8 +20,10 @@ function module.colorscheme(colo, config)
 	elseif colo == "catppuccin" then
 		config.color_scheme = "Catppuccin Mocha"
 		return
-	elseif colo == "other" then
+	elseif colo == "black" then
 		colors = { bg = "#000000", active_bg = "#000000", tab_bar_bg="#000000" }
+	elseif colo == "grey" then
+		colors = { bg = "#181818", active_bg = "#181818", tab_bar_bg="#181818" }
 	else
 		config.color_scheme = colo
 		return
@@ -37,6 +38,9 @@ function module.colorscheme(colo, config)
 			new_tab 	= { bg_color = colors.bg, 		fg_color = "#404040" },
 		},
 	}
+
+	-- local appearance = wezterm.gui.get_appearance()
+	-- config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
 end
 
 return module

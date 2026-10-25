@@ -2,6 +2,7 @@ return {
 	-- Colorscheme
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
 	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "navarasu/onedark.nvim", priority = 1000 },
 
 	-- Git signs integration, very much vs code like
 	{ "lewis6991/gitsigns.nvim", lazy = true },

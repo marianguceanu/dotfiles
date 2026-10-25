@@ -12,9 +12,7 @@ else
 end
 
 
-require("helpers").colorscheme("rose-pine", config)
--- local appearance = wezterm.gui.get_appearance()
--- config.color_scheme = appearance:find("Dark") and "Catppuccin Mocha" or "Catppuccin Latte"
+require("helpers").colorscheme("black", config)
 
 -- Font and enabling the ligatures
 config.font = wezterm.font {

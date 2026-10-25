@@ -1,5 +1,9 @@
-vim.cmd("colorscheme rose-pine-moon")
--- vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme("onedark")
+-- vim.cmd("colorscheme vim")
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "TabLine", { bg = "none" })
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none" })
 vim.o.winborder = "rounded"
 vim.o.termguicolors = true
 
