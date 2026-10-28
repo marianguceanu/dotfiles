@@ -3,3 +3,4 @@ require("setup_plugins")
 
 require("opts_visual")
 require("opts_keymaps")
+require("lsp_additional")
