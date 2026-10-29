@@ -1,8 +1,8 @@
 return {
 	-- Colorscheme
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
-	{ "rose-pine/neovim", name = "rose-pine" },
-	{ "navarasu/onedark.nvim", priority = 1000 },
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, lazy = true },
+	{ "rose-pine/neovim", name = "rose-pine", lazy = true },
+	{ "navarasu/onedark.nvim", priority = 1000, lazy = true },
 
 	-- Git signs integration, very much vs code like
 	{ "lewis6991/gitsigns.nvim", lazy = true },

@@ -1,7 +1,7 @@
 -- Editor appearance, colorscheme, custom highlights, etc..
-vim.cmd.colorscheme("onedark")
-vim.o.winborder 	= "rounded"
-vim.o.termguicolors 	= true
+vim.cmd.colorscheme("lunaperche")
+vim.o.winborder = "rounded"
+vim.o.termguicolors = true
 vim.api.nvim_set_hl(0, "StatusLine", 	{ bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", 	{ bg = "none" })
 vim.api.nvim_set_hl(0, "TabLine", 	{ bg = "none" })

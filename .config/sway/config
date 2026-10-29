@@ -1,8 +1,8 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+exec steam
+exec nm-applet
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user start graphical-session.target
 
 font IosevkaTerm Nerd Font 11 
 
@@ -226,7 +226,7 @@ bindsym $mod+Shift+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    position bottom 
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
